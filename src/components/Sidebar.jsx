@@ -25,6 +25,8 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { CiMoneyBill } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 
+// TOKEN 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
+
 const sectionsData = [
   {
     icon: <FaTachometerAlt />,
@@ -523,6 +525,7 @@ function Sidebar() {
             ) : null}
           </div>
         ))}
+        <div>TEST</div>
       </div>
     </div>
   );
