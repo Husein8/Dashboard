@@ -1,0 +1,34 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.chart-container line {
+  opacity: 0;
+  display: none;
+}
+
+.chart-container tspan {
+  transform: rotate(-20deg);
+}
+
+.chart-container.recharts-cartesian-axis-tick-value {
+  transform: rotate(-20deg);
+}
+
+.recharts-legend-wrapper {
+  display: none;
+}
+
+/* .chart-container .recharts-cartesian-axis-tick text {
+  transform: rotate(-20deg);
+  margin-top: 10px;
+} */
+
+.tspan {
+  transform: rotate(0deg);
+  margin-top: 0px; /* Adjust margin-top as needed */
+}
+
+/* .chart-container .recharts-cartesian-axis-line {
+  display: none; 
+} */
