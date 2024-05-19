@@ -25,8 +25,6 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { CiMoneyBill } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 
-// TOKEN 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
-
 const sectionsData = [
   {
     icon: <FaTachometerAlt />,
@@ -448,8 +446,8 @@ function Sidebar() {
               onClick={() => toggleSection(sectionIndex)}
             >
               <div className="flex items-center gap-2 ml-6 ">
-                <p className="text-xl">{section.icon}</p>
-                <p className="text-xl  text-black">{section.title}</p>
+                <p className="text-lg">{section.icon}</p>
+                <p className="text-lg  text-black">{section.title}</p>
               </div>
               {section.showArrows && (
                 <div>
@@ -525,7 +523,6 @@ function Sidebar() {
             ) : null}
           </div>
         ))}
-        <div>TEST</div>
       </div>
     </div>
   );

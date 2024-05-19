@@ -1,11 +1,16 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-
-// TOKEN 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
+import Login from "./components/Login";
 
 const App = () => {
   return (
     <>
-      <Dashboard />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

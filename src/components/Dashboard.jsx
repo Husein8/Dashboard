@@ -4,10 +4,10 @@ import MainContent from "./MainContent";
 function Dashboard() {
   return (
     <div className="flex">
-      <div className="w-1/6">
+      <div className="w-1/10">
         <Sidebar />
       </div>
-      <div className="w-5/6">
+      <div className="w-full">
         <MainContent />
       </div>
     </div>

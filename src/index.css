@@ -7,14 +7,6 @@
   display: none;
 }
 
-.chart-container tspan {
-  transform: rotate(-20deg);
-}
-
-.chart-container.recharts-cartesian-axis-tick-value {
-  transform: rotate(-20deg);
-}
-
 .recharts-legend-wrapper {
   display: none;
 }
@@ -24,11 +16,26 @@
   margin-top: 10px;
 } */
 
-.tspan {
-  transform: rotate(0deg);
-  margin-top: 0px; /* Adjust margin-top as needed */
-}
-
 /* .chart-container .recharts-cartesian-axis-line {
   display: none; 
 } */
+
+/* // LINE CHART */
+
+.recharts-layer .recharts-line-dots {
+  display: none;
+}
+
+.bg-svg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230099ff' fill-opacity='1' d='M0,32L120,53.3C240,75,480,117,720,122.7C960,128,1200,96,1320,80L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.default-input {
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+.hovered-input {
+  opacity: 1;
+  font-weight: bold;
+}
