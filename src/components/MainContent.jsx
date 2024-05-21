@@ -1,10 +1,10 @@
 import React from "react";
 import DashboardData from "./DashboardData";
 
-const MainContent = () => {
+const MainContent = ({ sidebarOpen, toggleSidebar }) => {
   return (
     <div>
-      <DashboardData />
+      <DashboardData sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
     </div>
   );
 };

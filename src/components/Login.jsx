@@ -24,7 +24,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-svg bg-no-repeat bg-cover">
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0.8, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-full max-w-xs "
@@ -32,11 +32,11 @@ function Login() {
         <form onSubmit={handleSubmit} className="px-8 pt-6 pb-8 mb-4">
           <motion.div
             className="mb-4 relative"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0.8, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <FaUser className="absolute left-3 top-3 text-blue-500" />
+            <FaUser className="absolute left-3 top-3" />
             <motion.input
               initial={{ opacity: 0.9 }}
               animate={{ opacity: 0.9 }}
@@ -57,7 +57,7 @@ function Login() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <FaLock className="absolute left-3 top-3 text-blue-500" />
+            <FaLock className="absolute left-3 top-3 " />
             <motion.input
               initial={{ opacity: 0.9 }}
               animate={{ opacity: 0.9 }}
