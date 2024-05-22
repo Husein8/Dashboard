@@ -3,7 +3,7 @@ import DashboardData from "./DashboardData";
 
 const MainContent = ({ sidebarOpen, toggleSidebar, login, setLogin }) => {
   return (
-    <div>
+    <div className="sm:p-2">
       <DashboardData
         sidebarOpen={sidebarOpen}
         toggleSidebar={toggleSidebar}

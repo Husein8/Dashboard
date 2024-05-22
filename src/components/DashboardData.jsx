@@ -53,22 +53,16 @@ function DashboardData({ sidebarOpen, toggleSidebar, login, setLogin }) {
   };
 
   return (
-    <div className="w-full pt-6 px-3">
+    <div className="w-full pt-6 mr-2">
       <IconsData
         sidebarOpen={sidebarOpen}
         toggleSidebar={toggleSidebar}
         login={login}
         setLogin={setLogin}
       />
-      {login ? (
-        <>
-          <Charts />
-          <TableUsersData />
-          <Footer />
-        </>
-      ) : (
-        ""
-      )}
+      <Charts />
+      <TableUsersData />
+      <Footer />
     </div>
   );
 }

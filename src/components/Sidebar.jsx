@@ -437,9 +437,9 @@ function Sidebar({ sidebarOpen, login }) {
 
   return (
     <div>
-      {login && sidebarOpen && (
+      {sidebarOpen && (
         <>
-          <div className="block">
+          <div className={`${sidebarOpen ? "sm:block" : "hidden"}`}>
             <div className="border-r border-x-gray-300">
               <h3 className="md:block text-center text-black text-2xl pt-4 pb-4">
                 SayHi
