@@ -35,7 +35,7 @@ const postsData = [
     createdAt: "16/05/2024 3:08 PM",
   },
   {
-    id: 6,
+    id: 4,
     title: "thank you",
     username: "yogac7346",
     createdAt: "16/05/2024 3:08 PM",
@@ -102,10 +102,10 @@ function LatestPost() {
   return (
     <div>
       {postDashboard ? (
-        <div className=" pb-100">
+        <div className="pb-100 md:ml-5">
           <div className="h-0.5 w-full bg"></div>
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold ml-2 mt-2">Latest Posts</h1>
+            <h1 className="text-2xl font-bold mt-2">Latest Posts</h1>
             <div className="flex items-center gap-3">
               <button onClick={toggleSidebar} className="text-xl">
                 {isSidebarVisible ? (
@@ -121,60 +121,66 @@ function LatestPost() {
           </div>
           <div>
             {isSidebarVisible ? (
-              <table className="min-w-full border-collapse block md:table">
-                <thead className="block md:table-header-group">
-                  <tr className="border  block md:table-row">
-                    <th className="px-4 py-2 border-b text-left block md:table-cell">
-                      #
-                    </th>
-                    <th className=" border-b text-left block md:table-cell">
-                      Title
-                    </th>
-                    <th className="pl-32 py-2 border-b text-left block md:table-cell">
-                      Username
-                    </th>
-                    <th className=" py-2 border-b text-left block md:table-cell">
-                      Created At
-                    </th>
-                    <th className="px-4 py-2 border-b text-left block md:table-cell">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="block md:table-row-group">
-                  {posts.map((post, index) => (
-                    <tr
-                      key={post.id}
-                      className="border border-gray-300 block md:table-row"
-                    >
-                      <td className="px-4 py-2 border-b block md:table-cell">
-                        {index + 1}
-                      </td>
-                      <td className="border-b block md:table-cell">
-                        {post.title}
-                      </td>
-                      <td className="pl-32 py-2 border-b block md:table-cell cursor-pointer text hover:opacity-80">
-                        {/* link will be needed because it leads to clicked user name? */}
-                        {post.username}
-                      </td>
-                      <td className="py-2 border-b block md:table-cell">
-                        {post.createdAt}
-                      </td>
-                      <td className="px-4 py-2 border-b block md:table-cell">
-                        <button className="text hover:opacity-80">
-                          {/* the link will be needed because it leads to a certain post clicked */}
-                          <FaEye />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              ""
-            )}
+              <div className="flex flex-col">
+                <div className="overflow-x-auto lg:-mx-0">
+                  <div className="inline-block min-w-full py-2 ">
+                    <div className="overflow-hidden">
+                      <table className="min-w-full text-left text-sm font-light">
+                        <thead className="border-b font-medium dark:border-neutral-500">
+                          <tr>
+                            <th scope="col" className="px-4 py-4">
+                              #
+                            </th>
+                            <th scope="col" className="px-4 py-4">
+                              Title
+                            </th>
+                            <th scope="col" className="px-4 py-4">
+                              Username
+                            </th>
+                            <th scope="col" className="pl-10 px-4 py-4 ">
+                              Created at
+                            </th>
+                            <th scope="col" className="lg:pl-10 pl-14 py-4">
+                              Action
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {posts.map((post, index) => (
+                            <tr
+                              key={`${post.id}-${index}`}
+                              className="border-b dark:border-neutral-500"
+                            >
+                              <td className="whitespace-nowrap px-4 py-4 font-medium">
+                                {index + 1}
+                              </td>
+                              <td className="whitespace-nowrap px-4 py-4 font-medium">
+                                {post.title}
+                              </td>
+                              <td className="whitespace-nowrap px-4 py-4 font-medium cursor-pointer text hover:opacity-80">
+                                {/* link will be needed because it leads to clicked user name? */}
+                                {post.username}
+                              </td>
+                              <td className="whitespace-nowrap pl-10 px-4 py-4 font-medium">
+                                {post.createdAt}
+                              </td>
+                              <td className="whitespace-nowrap py-4 font-medium">
+                                <button className="text hover:opacity-80 ml-14 lg:ml-10">
+                                  {/* the link will be needed because it leads to a certain post clicked */}
+                                  <FaEye />
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null}
             {isSidebarVisible ? (
-              <button className="float-right mt-14 ml-10 px-3 py-1 border border-transparent hover:border-black">
+              <button className="float-right mt-8 ml-10 px-3 py-1 border border-transparent rounded hover:border-black">
                 View All Posts
               </button>
             ) : (

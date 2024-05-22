@@ -77,7 +77,7 @@ function NewUsersData() {
           <div className="w-full h-0.5 bg-red-600 mt-4"></div>
           <div className="flex items-center justify-between mt-2">
             <div>
-              <span className="text-xl  ">New Users</span>
+              <span className="text-lg">New Users</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="bg-red-600 text-white p-0.5 px-1 rounded text-sm">
@@ -96,12 +96,12 @@ function NewUsersData() {
             </div>
           </div>
           {isSidebarVisible ? (
-            <div className="container mx-auto pt-4 pr-4">
-              <div className="grid grid-cols-1 xl:grid-cols-4">
+            <div className="container mx-auto mt-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 md:gap-5 lg:gap-0">
                 {usersData.map((user) => (
                   <div
                     key={user.id}
-                    className="flex flex-col items-center bg-white p-2 rounded-lg"
+                    className="flex flex-col items-center bg-white rounded-lg"
                   >
                     <img
                       src={user.avatar}
@@ -125,7 +125,7 @@ function NewUsersData() {
             ""
           )}
           {isSidebarVisible ? (
-            <button className="float-right mt-3 mr-6 px-3 py-1 border border-transparent hover:border-black">
+            <button className="float-right mt-3 mr-1 px-3 py-1 border border-transparent rounded hover:border-black">
               View All Users
             </button>
           ) : (

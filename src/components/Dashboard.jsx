@@ -2,7 +2,7 @@ import Sidebar from "./Sidebar";
 import MainContent from "./MainContent";
 import { useState } from "react";
 
-function Dashboard() {
+function Dashboard({ login, setLogin }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -12,10 +12,24 @@ function Dashboard() {
   return (
     <div className="flex">
       <div className="w-1/10">
-        <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+        {login ? (
+          <Sidebar
+            sidebarOpen={sidebarOpen}
+            toggleSidebar={toggleSidebar}
+            setSidebarOpen={setSidebarOpen}
+            login={login}
+          />
+        ) : (
+          ""
+        )}
       </div>
       <div className="w-full">
-        <MainContent sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+        <MainContent
+          sidebarOpen={sidebarOpen}
+          toggleSidebar={toggleSidebar}
+          login={login}
+          setLogin={setLogin}
+        />
       </div>
     </div>
   );

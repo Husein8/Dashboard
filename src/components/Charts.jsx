@@ -51,7 +51,7 @@ const areaPoostsData = (label) => ({
       backgroundColor: "#4F98C3",
       borderColor: "#4F98C3",
       borderWidth: 1,
-      pointRadius: 0,
+      //   pointRadius: 0,
       tension: 0.4,
     },
   ],
@@ -107,7 +107,7 @@ const areaReelsData = (label) => ({
       backgroundColor: "#4F98C3",
       borderColor: "#4F98C3",
       borderWidth: 1,
-      pointRadius: 0,
+      //   pointRadius: 0,
       tension: 0.4,
     },
   ],
@@ -232,7 +232,7 @@ const Charts = () => {
           <FaChartBar />
           <h3>Annual report</h3>
         </div>
-        <div className="mr-2">
+        <div className="mr-2 cursor-pointer">
           {openChart ? (
             <HiMinus onClick={toggleChart} />
           ) : (
@@ -271,163 +271,3 @@ const Charts = () => {
 };
 
 export default Charts;
-
-{
-  /* <div className="ml-2">
-        <div className="flex items-center justify-between pt-3 gap-3 font-normal">
-          <div className="flex items-center gap-2 text-xl">
-            <FaChartBar />
-            <h3>Annual Reports</h3>
-          </div>
-          <div
-            className="pr-5 text-gray-600 cursor-pointer"
-            onClick={() => setShowContent((showContent) => !showContent)}
-          >
-            <TiMinusOutline />
-          </div>
-        </div>
-        {showContent ? (
-          <div>
-            <div className="chart-container grid grid-cols-3 gap-24 ">
-              <div>
-                <div>
-                  <div className="mt-5 w-full h-1 bg-cyan-600 rounded-xl"></div>
-                  <h3 className="pt-2 ml-1 text-2xl">Posts</h3>
-                </div>
-                <AreaChart
-                  width={360}
-                  height={300}
-                  data={postsData}
-                  margin={{ right: -50, bottom: 5, left: -15 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="name"
-                    tick={{ angle: -35, textAnchor: "end" }}
-                  />
-                  <YAxis
-                    ticks={[0, 50, 100, 150, 200, 250, 300]}
-                    padding={{ top: 40, bottom: 10 }}
-                  />
-                  <Tooltip content={<CustomTooltipLineChart />} />
-                  <Area
-                    type="monotone"
-                    dataKey="uv"
-                    stroke="#4F98C3"
-                    fill="#4F98C3"
-                  />
-                </AreaChart>
-              </div>
-              <div>
-                <div>
-                  <div className="mt-5 w-full h-1 bg-green-600 rounded-xl"></div>
-                  <h3 className="pt-2 ml-1 text-2xl">Users</h3>
-                </div>
-                <BarChart
-                  width={360}
-                  height={300}
-                  data={usersData}
-                  margin={{ right: -50, bottom: 5, left: -20 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="name"
-                    tick={{ angle: -30, textAnchor: "end" }}
-                  />
-                  <YAxis
-                    domain={[0, 700]}
-                    ticks={[0, 100, 200, 300, 400, 500, 600, 700]}
-                    onAnimationEnd={2000}
-                    // orientation="left"
-                    padding={{ top: 40, bottom: 10, left: 4 }}
-                  />
-                  <Tooltip
-                    position={{ x: 20, y: 40 }}
-                    content={<CustomTooltip />}
-                  />
-                  <Legend />
-
-                  <Bar dataKey="uv" fill="#16A34A" barSize={20} />
-                </BarChart>
-              </div>
-              <div className="w-72 h-64">
-                <div>
-                  <div className="mt-5 w-full h-1 bg-green-600 rounded-xl"></div>
-                  <h3 className="pt-2 ml-3 text-2xl">Payments</h3>
-                </div>
-                <Pie data={paymentData} options={paymentOptions} />{" "}
-                <h3 className=" ">test</h3>
-              </div>
-              <div>
-                <div>
-                  <div className="mt-5 w-full h-1 bg-green-600 rounded-xl"></div>
-                  <h3 className="pt-2 ml-1 text-2xl">Coin</h3>
-                </div>
-                <BarChart
-                  data={coinData}
-                  width={455}
-                  height={300}
-                  margin={{ top: 30, left: -5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="name"
-                    tick={{ angle: -35, textAnchor: "end" }}
-                    padding={{ left: 0 }}
-                  />
-                  <YAxis
-                    ticks={[0, 3500, 7000, 10500, 14000]}
-                    padding={{ top: 20, bottom: 10 }}
-                  />
-                  <Tooltip content={<CustomTooltipMixBarChart />} />
-                  <Legend />
-                  <Bar dataKey="coinExchanged" stackId="a" fill="#D80303" />
-                  <Bar dataKey="coinPurchased" stackId="a" fill="#16A34A" />
-                  <Bar dataKey="coinTransfered" fill="#FFC856" />
-                  {/* <Bar dataKey="uv" fill="#ffc658" /> */
-}
-{
-  /* name: "Dec", // coinPurchased: 4000, // coinExchanged:
-                  2400, // coinTransfered: 2400,  */
-}
-{
-  /* </BarChart>
-              </div>
-              <div>
-                <div>
-                  <div className="mt-5 w-full h-1 bg-cyan-600 rounded-xl"></div>
-                  <h3 className="pt-2 ml-1 text-2xl">Reels</h3>
-                </div>
-                <AreaChart
-                  data={reelsData}
-                  width={455}
-                  height={300}
-                  margin={{ top: 30, left: -25, right: 15 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis
-                    dataKey="name"
-                    tick={{ angle: -35, textAnchor: "end" }}
-                    padding={{ left: 4 }}
-                  />
-                  <YAxis
-                    ticks={[0, 5, 10, 15, 20, 25, 30, 35, 40]}
-                    padding={{ top: 40, bottom: 10 }}
-                  />
-                  <Tooltip content={<CustomTooltipLineChart />} />
-                  <Area
-                    type="monotone"
-                    dataKey="uv"
-                    stroke="#4F98C3"
-                    fill="#4F98C3"
-                  />
-                </AreaChart>
-              </div>
-            </div>
-          </div>
-        ) : null}
-      </div> */
-}
-{
-  (" ");
-}
