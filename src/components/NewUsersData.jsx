@@ -96,12 +96,12 @@ function NewUsersData() {
             </div>
           </div>
           {isSidebarVisible ? (
-            <div className="container mx-auto mt-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 md:gap-5 lg:gap-0">
+            <div className="container mx-auto mt-6">
+              <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 md:gap-5 lg:gap-0">
                 {usersData.map((user) => (
                   <div
                     key={user.id}
-                    className="flex flex-col items-center bg-white rounded-lg"
+                    className="flex flex-col items-center rounded-lg pt-2"
                   >
                     <img
                       src={user.avatar}
@@ -109,11 +109,11 @@ function NewUsersData() {
                       className="w-14 h-14 object-cover rounded"
                     />
                     <div className="flex flex-col items-center">
-                      <p className="hover:opacity-80 cursor-pointer">
+                      <p className="hover:opacity-80 cursor-pointer text-sm">
                         {/* the name will lead to users detail profile */}
                         {user.name.toLowerCase()}
                       </p>
-                      <p className="text-sm text-gray-600 mb-3">
+                      <p className="text-xs text-gray-600 mb-3">
                         {formatDate(user.lastLogin)}{" "}
                       </p>
                     </div>

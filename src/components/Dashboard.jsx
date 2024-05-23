@@ -11,7 +11,7 @@ function Dashboard({ login, setLogin }) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 765) {
+      if (window.innerWidth >= 760) {
         setSidebarOpen(true);
       } else {
         setSidebarOpen(false);
@@ -26,15 +26,19 @@ function Dashboard({ login, setLogin }) {
 
   return (
     <div className="flex">
-      <div className="w-1/10">
-        <Sidebar
-          sidebarOpen={sidebarOpen}
-          toggleSidebar={toggleSidebar}
-          setSidebarOpen={setSidebarOpen}
-          login={login}
-        />
+      <div className="w-1/10 bg-gray-900 bg-opacity-20">
+        {login ? (
+          <Sidebar
+            sidebarOpen={sidebarOpen}
+            toggleSidebar={toggleSidebar}
+            setSidebarOpen={setSidebarOpen}
+            login={login}
+          />
+        ) : (
+          ""
+        )}
       </div>
-      <div className="w-full">
+      <div className="w-full bg-gray-900 bg-opacity-20">
         <MainContent
           sidebarOpen={sidebarOpen}
           toggleSidebar={toggleSidebar}

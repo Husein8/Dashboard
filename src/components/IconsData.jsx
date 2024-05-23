@@ -55,7 +55,7 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
   };
 
   return (
-    <div className="md:ml-6">
+    <div className="md:ml-2">
       <div className="flex items-center justify-between">
         <div>
           <button onClick={toggleSidebar} className="text-xl p-2">
@@ -94,21 +94,21 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
         )}
       </div>
 
-      <h1 className="pt-6 text-3xl">Dashboard</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-x-8 md:w-10/12 lg:w-11/12 pt-6">
+      <h1 className="pt-6 text-3xl mb-5">Dashboard</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pr-4">
         {iconsData.map((item, index) => (
-          <div key={index} className="flex pt-5">
+          <div key={index} className="flex">
             <div
-              className={`container-picture flex items-center justify-center text-5xl w-32 h-20 ${item.color} text-white`}
+              className={`container-picture flex items-center justify-center text-5xl ${item.color} px-3 py-4`}
             >
               {item.icon}
             </div>
-            <div className="flex flex-col w-full bg-gray-500 bg-opacity-10 border-b border-b-gray-800 border-opacity-5 pl-2">
-              {" "}
-              <span className="font-bold">{item.title}</span>
-              <span className="text-gray-700">{item.count}</span>
+
+            <div className="flex flex-col w-full border-b border-gray-800 border-opacity-5 pl-2 ">
+              <span className="text-sm">{item.title}</span>
+              <span className="text-base font-bold">{item.count}</span>
               <div className="flex flex-row items-center text-blue-500 gap-1">
-                <span className="text-xs">{item.moreInfo}</span>
+                <span className="text-sm">{item.moreInfo}</span>
                 <FaArrowCircleRight />
               </div>
             </div>

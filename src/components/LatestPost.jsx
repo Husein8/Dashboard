@@ -102,7 +102,7 @@ function LatestPost() {
   return (
     <div>
       {postDashboard ? (
-        <div className="pb-100 md:ml-5">
+        <div className="pb-100">
           <div className="h-0.5 w-full bg"></div>
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-2xl font-bold mt-2">Latest Posts</h1>

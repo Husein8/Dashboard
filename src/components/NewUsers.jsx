@@ -4,7 +4,7 @@ import NewUsersData from "./NewUsersData";
 
 function NewUsers() {
   return (
-    <div className="px-0 md:px-10">
+    <div className="px-0 md:pl-6">
       <StatusData />
       <NewUsersData />
     </div>

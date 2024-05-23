@@ -513,10 +513,10 @@ function Sidebar({ sidebarOpen, login }) {
                                       {item.subContent.map(
                                         (subItem, subItemIndex) => (
                                           <li
-                                            className="flex items-center pt-2"
+                                            className="flex items-center pt-2 pl-1 text-sm"
                                             key={subItemIndex}
                                           >
-                                            <div className="flex items-center gap-2 opacity-80 hover:opacity-100 hover:font-medium cursor-pointer">
+                                            <div className="flex items-center text-sm gap-2 opacity-80 hover:opacity-100 hover:font-medium cursor-pointer">
                                               {subItem.icon}
                                               {subItem.text}
                                             </div>

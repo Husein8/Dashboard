@@ -29,7 +29,7 @@ function InfoData() {
     <div className="mt-10 lg:mt-0">
       {cardData.map((card, index) => (
         <div key={index} className={`shadow-lg ${card.bgColor}`}>
-          <div className="flex items-center mb-4 p-4 ">
+          <div className="flex items-center mb-4 p-2">
             <div className="ml-2 mr-5">{card.icon}</div>
             <div className="flex flex-col text-white">
               <span className="text-sm md:text-base">{card.header}</span>

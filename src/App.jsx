@@ -9,10 +9,8 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<Login login={login} setLogin={setLogin} />}
-          />
+          <Route index element={<Login login={login} setLogin={setLogin} />} />
+
           <Route
             path="/dashboard"
             element={<Dashboard login={login} setLogin={setLogin} />}
