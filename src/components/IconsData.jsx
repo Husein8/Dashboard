@@ -95,7 +95,7 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
       </div>
 
       <h1 className="pt-6 text-3xl mb-5">Dashboard</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pr-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pr-4">
         {iconsData.map((item, index) => (
           <div key={index} className="flex">
             <div
