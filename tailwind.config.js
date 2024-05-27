@@ -9,6 +9,7 @@ export default {
         customBlues: "##00C0EF",
         customGreen: "##00A65A",
         customRed: "#DD4B39",
+        buttonNext: "#00b071",
       },
     },
   },

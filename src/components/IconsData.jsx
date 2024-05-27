@@ -49,9 +49,13 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
   };
 
   const handleLogout = () => {
-    setLogin(false);
-    setShowAdminContainer(false);
     navigate("/");
+  };
+
+  // handleSettingsClick;
+
+  const handleSettingsClick = () => {
+    navigate("settings");
   };
 
   return (
@@ -76,8 +80,11 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
                 <p>Admin</p>
                 <p className="mb-6 text-sm">Member since May 2024</p>
               </div>
-              <div className="flex justify-between w-full mt-3 ">
-                <button className="text-black px-4 py-2 rounded  border hover:border-black">
+              <div className="flex justify-between w-full mt-3">
+                <button
+                  onClick={handleSettingsClick}
+                  className="text-black px-4 py-2 rounded  border hover:border-black"
+                >
                   Settings
                 </button>
                 <button

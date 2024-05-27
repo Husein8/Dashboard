@@ -30,7 +30,7 @@ function Login({ setLogin }) {
     );
     if (user) {
       setLogin(true);
-      navigate("/dashboard");
+      navigate("dashboard");
     } else {
       setError("Invalid username or password");
     }

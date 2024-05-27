@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import { useState } from "react";
+import OnboardSettings from "./components/OnboardSettings";
 
 const App = () => {
   const [login, setLogin] = useState(false);
@@ -14,6 +15,11 @@ const App = () => {
           <Route
             path="/dashboard"
             element={<Dashboard login={login} setLogin={setLogin} />}
+          />
+
+          <Route
+            path="/dashboard/settings"
+            element={<OnboardSettings login={login} setLogin={setLogin} />}
           />
         </Routes>
       </BrowserRouter>
