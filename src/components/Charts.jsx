@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Line, Bar, Pie } from "react-chartjs-2";
 import { FaChartBar } from "react-icons/fa";
 import { HiMinus, HiPlus } from "react-icons/hi";
@@ -51,7 +51,6 @@ const areaPoostsData = (label) => ({
       backgroundColor: "#4F98C3",
       borderColor: "#4F98C3",
       borderWidth: 1,
-      //   pointRadius: 0,
       tension: 0.4,
     },
   ],
@@ -107,7 +106,6 @@ const areaReelsData = (label) => ({
       backgroundColor: "#4F98C3",
       borderColor: "#4F98C3",
       borderWidth: 1,
-      //   pointRadius: 0,
       tension: 0.4,
     },
   ],
@@ -117,8 +115,8 @@ const pieData = {
   labels: ["paid for ads", "paid for video", "paid for gift"],
   datasets: [
     {
-      data: [25, 50, 40], // Percentages or values for each segment
-      backgroundColor: ["#00A65A", "#007BFF", "#FF0000"], // Green, Blue, Red
+      data: [25, 50, 40],
+      backgroundColor: ["#00A65A", "#007BFF", "#FF0000"],
       hoverBackgroundColor: ["#00A65A", "#007BFF", "#FF0000"],
     },
   ],
@@ -170,20 +168,19 @@ const chartsStyle = {
   scales: {
     x: {
       grid: {
-        display: false, // Remove grid lines on x-axis
+        display: false,
       },
     },
     y: {
       grid: {
-        display: false, // Remove grid lines on y-axis
+        display: false,
       },
     },
   },
-  // Adjust bar thickness
   plugins: {
     bar: {
-      barThickness: 5, // Adjust this value as needed to decrease the bar width
-      maxBarThickness: 5, // Ensure bars are not thicker than this value
+      barThickness: 5,
+      maxBarThickness: 5,
     },
   },
 };
@@ -221,14 +218,20 @@ const chartOptions = {
 const Charts = () => {
   const [openChart, setIsOpenChart] = useState(true);
 
-  function toggleChart() {
+  const toggleChart = () => {
     setIsOpenChart(!openChart);
-  }
+  };
+
+  // Use useEffect to ensure the charts are rendered immediately
+  useEffect(() => {
+    // Trigger a re-render to ensure charts are displayed immediately
+    setIsOpenChart(true);
+  }, []);
 
   return (
-    <div className="md:pl-6 ">
+    <div className="md:pl-6">
       <div className="flex items-center justify-between mt-4 mb-6">
-        <div className="flex items-center gap-2 ">
+        <div className="flex items-center gap-2">
           <FaChartBar />
           <h3>Annual report</h3>
         </div>
@@ -236,32 +239,30 @@ const Charts = () => {
           {openChart ? (
             <HiMinus onClick={toggleChart} />
           ) : (
-            <>
-              <HiPlus onClick={toggleChart} />
-            </>
+            <HiPlus onClick={toggleChart} />
           )}
         </div>
       </div>
       {openChart ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 sm:gap-x-20 md:gap-x-8">
           <div className="w-full h-60">
-            <h2 className=" mb-2">Posts</h2>
-            <Line data={areaPoostsData("Posts")} options={chartsStyle} />{" "}
+            <h2 className="mb-2">Posts</h2>
+            <Line data={areaPoostsData("Posts")} options={chartsStyle} />
           </div>
-          <div className="w-full h-60">
-            <h2 className=" mb-2">Users</h2>
+          <div className="w-full h-64">
+            <h2 className="mb-2">Users</h2>
             <Bar data={barUsersData("Users")} options={chartsStyle} />
           </div>
           <div className="w-full h-60">
-            <h2 className=" mb-2">Reels</h2>
+            <h2 className="mb-2">Reels</h2>
             <Line data={areaReelsData("Reels")} options={chartsStyle} />
           </div>
           <div className="w-full h-60">
-            <h2 className=" mb-2">Payments</h2>
-            <Pie data={pieData} options={chartOptions} />{" "}
+            <h2 className="mb-2">Payments</h2>
+            <Pie data={pieData} options={chartOptions} />
           </div>
           <div className="w-full h-80 md:h-60">
-            <h2 className=" mb-2">Coins</h2>
+            <h2 className="mb-2">Coins</h2>
             <Bar data={coinData} options={chartsStyle} />
           </div>
         </div>

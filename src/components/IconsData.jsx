@@ -111,7 +111,7 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
               {item.icon}
             </div>
 
-            <div className="flex flex-col w-full border-b border-gray-800 border-opacity-5 pl-2 ">
+            <div className="flex flex-col bg-white bg-opacity-50 w-full border-b border-gray-800 border-opacity-10 pl-2 ">
               <span className="text-sm">{item.title}</span>
               <span className="text-base font-bold">{item.count}</span>
               <div className="flex flex-row items-center text-blue-500 gap-1">
