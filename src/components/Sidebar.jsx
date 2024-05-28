@@ -436,7 +436,7 @@ function Sidebar({ sidebarOpen, login }) {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       {sidebarOpen && (
         <>
           <div className={`${sidebarOpen ? "sm:block" : "hidden"}`}>

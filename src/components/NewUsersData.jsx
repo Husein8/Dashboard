@@ -73,9 +73,9 @@ function NewUsersData() {
   return (
     <div>
       {postDashboard ? (
-        <div>
+        <div className="bg-white">
           <div className="w-full h-0.5 bg-red-600 mt-4"></div>
-          <div className="flex items-center justify-between mt-2">
+          <div className="flex items-center justify-between mt-2 px-3">
             <div>
               <span className="text-lg">New Users</span>
             </div>

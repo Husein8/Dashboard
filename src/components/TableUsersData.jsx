@@ -3,7 +3,7 @@ import NewUsers from "./NewUsers";
 
 function TableUsersData() {
   return (
-    <div className="flex flex-col lg:flex-row justify-between mt-20 mb-10 pl-2">
+    <div className="flex flex-col lg:flex-row justify-between mt-10 mb-10 pl-2">
       <div className="lg:w-7/12">
         <LatestPost />
       </div>

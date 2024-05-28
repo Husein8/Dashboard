@@ -60,7 +60,7 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
 
   return (
     <div className="md:ml-2">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between bg-white">
         <div>
           <button onClick={toggleSidebar} className="text-xl p-2">
             <FaBars />

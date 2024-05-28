@@ -102,9 +102,9 @@ function LatestPost() {
   return (
     <div>
       {postDashboard ? (
-        <div className="pb-100">
+        <div className="pb-100 bg-white">
           <div className="h-0.5 w-full bg"></div>
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 px-2">
             <h1 className="text-2xl font-bold mt-2">Latest Posts</h1>
             <div className="flex items-center gap-3">
               <button onClick={toggleSidebar} className="text-xl">
