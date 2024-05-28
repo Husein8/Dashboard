@@ -1,4 +1,5 @@
 import React from "react";
+import { FaAngleLeft } from "react-icons/fa";
 
 const Step4 = ({
   interests,
@@ -6,13 +7,15 @@ const Step4 = ({
   handleNext,
   handleBack,
   handleSkip,
+  validateStep,
 }) => (
   <div className="w-full mb-4">
-    <div className="flex justify-between items-center p-4">
-      <button onClick={handleBack} className="text-blue-500 underline">
-        Back
-      </button>
-      <button onClick={handleSkip} className="text-blue-500 underline">
+    <div className="flex justify-between items-center px-3 pt-7 pb-4">
+      <FaAngleLeft
+        onClick={handleBack}
+        className="text-2xl opacity-60 cursor-pointer"
+      />
+      <button onClick={handleSkip} className="text-gray-500">
         Skip
       </button>
     </div>
@@ -67,8 +70,8 @@ const Step4 = ({
         ))}
       </div>
       <button
-        onClick={handleNext}
-        className="bg-green-500 text-white py-2 px-4 rounded w-full mt-4"
+        onClick={() => validateStep(4) && handleNext()}
+        className="bg-buttonNext text-white py-2 px-4 rounded-3xl w-full mt-20"
       >
         Next
       </button>

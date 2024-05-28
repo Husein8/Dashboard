@@ -1,10 +1,20 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
 
-const Step1 = ({ profile, setProfile, handleNext, goingBack, handleSkip }) => (
+const Step1 = ({
+  profile,
+  setProfile,
+  handleNext,
+  goingBack,
+  handleSkip,
+  validateStep,
+}) => (
   <div className="w-full rounded mb-4">
-    <div className="flex justify-between px-3">
-      <FaAngleLeft onClick={goingBack} className="text-2xl opacity-50" />
+    <div className="flex justify-between pt-8 px-3">
+      <FaAngleLeft
+        onClick={goingBack}
+        className="text-2xl opacity-50 cursor-pointer"
+      />
       <button onClick={handleSkip} className="text-gray-500">
         Skip
       </button>
@@ -31,7 +41,7 @@ const Step1 = ({ profile, setProfile, handleNext, goingBack, handleSkip }) => (
         onChange={(e) => setProfile({ ...profile, lastName: e.target.value })}
       />
       <button
-        onClick={handleNext}
+        onClick={() => validateStep(1) && handleNext()}
         className="bg-buttonNext text-white py-2 px-4 rounded-3xl w-full mt-20"
       >
         Next

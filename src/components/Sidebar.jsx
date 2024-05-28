@@ -440,7 +440,7 @@ function Sidebar({ sidebarOpen, login }) {
       {sidebarOpen && (
         <>
           <div className={`${sidebarOpen ? "sm:block" : "hidden"}`}>
-            <div className="border-r border-x-gray-300">
+            <div className="border-r border-x-gray-400 border-opacity-55">
               <h3 className="md:block text-center text-black text-2xl pt-4 pb-4">
                 SayHi
               </h3>

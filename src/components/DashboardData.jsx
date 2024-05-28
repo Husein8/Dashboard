@@ -53,7 +53,7 @@ function DashboardData({ sidebarOpen, toggleSidebar, login, setLogin }) {
   };
 
   return (
-    <div className="w-full pt-6 px-4">
+    <div className="w-full bg-bgMainContent">
       {login ? (
         <>
           <IconsData

@@ -7,16 +7,20 @@ const Step3 = ({
   handleNext,
   handleBack,
   handleSkip,
+  validateStep,
 }) => (
   <div className="w-full py-4 mb-4">
-    <div className="flex justify-between items-center px-4">
-      <FaAngleLeft onClick={handleBack} className="text-xl opacity-60" />
-      <button onClick={handleSkip} className="text-blue-500 underline">
+    <div className="flex justify-between items-center px-3 pt-3">
+      <FaAngleLeft
+        onClick={handleBack}
+        className="text-2xl opacity-60 cursor-pointer"
+      />{" "}
+      <button onClick={handleSkip} className="text-gray-500 ">
         Skip
       </button>
     </div>
     <div className="flex flex-col p-4">
-      <h2 className="font-bold text-xl mb-4">Choose location</h2>
+      <h2 className="font-bold text-xl mt-5 mb-4">Choose location</h2>
       <p className="mb-4">
         This will be shown to all users. Choose a wise user name like
         its_mike_here
@@ -46,8 +50,8 @@ const Step3 = ({
         onChange={(e) => setLocation({ ...location, country: e.target.value })}
       />
       <button
-        onClick={handleNext}
-        className="bg-green-500 text-white py-2 px-4 rounded w-full mt-4"
+        onClick={() => validateStep(3) && handleNext()}
+        className="bg-buttonNext text-white py-2 px-4 rounded-3xl w-full mt-20"
       >
         Next
       </button>

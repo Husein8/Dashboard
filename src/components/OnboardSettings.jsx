@@ -18,6 +18,8 @@ const OnboardSettings = () => {
   });
   const [interests, setInterests] = useState([]);
   const [photo, setPhoto] = useState(null);
+  const [bio, setBio] = useState("");
+  const [showFindFriends, setShowFindFriends] = useState(true);
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -30,6 +32,7 @@ const OnboardSettings = () => {
         location,
         interests,
         photo,
+        bio,
       });
       goingBack();
     }
@@ -51,6 +54,29 @@ const OnboardSettings = () => {
     navigate(-1);
   };
 
+  const validateStep = (step) => {
+    switch (step) {
+      case 1:
+        return profile.firstName !== "" && profile.lastName !== "";
+      case 2:
+        return selectedGender !== "";
+      case 3:
+        return (
+          location.city !== "" &&
+          location.state !== "" &&
+          location.country !== ""
+        );
+      case 4:
+        return interests.length > 0;
+      case 5:
+        return photo !== null;
+      case 6:
+        return bio !== "";
+      default:
+        return false;
+    }
+  };
+
   const steps = [
     <Step1
       key="step1"
@@ -59,6 +85,7 @@ const OnboardSettings = () => {
       handleNext={handleNext}
       goingBack={goingBack}
       handleSkip={handleSkip}
+      validateStep={validateStep}
     />,
     <Step2
       key="step2"
@@ -67,6 +94,7 @@ const OnboardSettings = () => {
       handleNext={handleNext}
       handleBack={handleBack}
       handleSkip={handleSkip}
+      validateStep={validateStep}
     />,
     <Step3
       key="step3"
@@ -75,6 +103,7 @@ const OnboardSettings = () => {
       handleNext={handleNext}
       handleBack={handleBack}
       handleSkip={handleSkip}
+      validateStep={validateStep}
     />,
     <Step4
       key="step4"
@@ -83,33 +112,37 @@ const OnboardSettings = () => {
       handleNext={handleNext}
       handleBack={handleBack}
       handleSkip={handleSkip}
+      validateStep={validateStep}
     />,
     <Step5
       key="step5"
+      photo={photo}
       setPhoto={setPhoto}
       handleNext={handleNext}
       handleBack={handleBack}
       handleSkip={handleSkip}
+      validateStep={validateStep}
     />,
     <Step6
       key="step6"
-      profile={profile}
-      selectedGender={selectedGender}
-      location={location}
-      interests={interests}
-      photo={photo}
-      handleBack={handleBack}
+      bio={bio}
+      setBio={setBio}
       handleNext={handleNext}
+      handleBack={handleBack}
+      handleSkip={handleSkip}
+      validateStep={validateStep}
+      showFindFriends={showFindFriends}
+      setShowFindFriends={setShowFindFriends}
     />,
   ];
 
   return (
     <div className="flex flex-col items-center max-w-md mx-auto px-4">
-      <div className={`flex justify-between gap-2`}>
+      <div className={`flex justify-between gap-2 absolute top-10`}>
         {[...Array(6)].map((_, index) => (
           <div
             key={index}
-            className={`w-5 h-1 mb-1 ${
+            className={`w-6 h-1 mb-1 ${
               index < step ? "bg-green-500" : "bg-gray-400"
             } rounded`}
           ></div>

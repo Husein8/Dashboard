@@ -1,58 +1,49 @@
 import React from "react";
+import { FaAngleLeft } from "react-icons/fa";
 
 const Step6 = ({
-  profile,
-  selectedGender,
-  location,
-  interests,
-  photo,
-  handleBack,
+  bio,
+  setBio,
   handleNext,
+  handleBack,
+  handleSkip,
+  validateStep,
+  showFindFriends,
+  setShowFindFriends,
 }) => (
-  <div className="w-full mb-4">
-    <div className="flex justify-between items-center p-4">
-      <button onClick={handleBack} className="text-blue-500 underline">
-        Back
+  <div className="w-full py-4 mb-4">
+    <div className="flex justify-between items-center px-4 pt-3">
+      <FaAngleLeft
+        onClick={handleBack}
+        className="text-2xl opacity-60 cursor-pointer"
+      />
+      <button onClick={handleSkip} className="text-gray-500 ">
+        Skip
       </button>
     </div>
     <div className="flex flex-col p-4">
-      <h2 className="font-bold text-xl mb-4">Review your profile</h2>
-      <p className="mb-4">Please review your profile information</p>
-      <div className="flex flex-col mb-4">
-        <h3 className="font-semibold">Name</h3>
-        <p>
-          {profile.firstName} {profile.lastName}
-        </p>
-      </div>
-      <div className="flex flex-col mb-4">
-        <h3 className="font-semibold">Gender</h3>
-        <p>{selectedGender}</p>
-      </div>
-      <div className="flex flex-col mb-4">
-        <h3 className="font-semibold">Location</h3>
-        <p>
-          {location.city}, {location.state}, {location.country}
-        </p>
-      </div>
-      <div className="flex flex-col mb-4">
-        <h3 className="font-semibold">Interests</h3>
-        <p>{interests.join(", ")}</p>
-      </div>
-      {photo && (
-        <div className="flex flex-col mb-4">
-          <h3 className="font-semibold">Profile Photo</h3>
-          <img
-            src={URL.createObjectURL(photo)}
-            alt="Profile"
-            className="w-32 h-32 object-cover"
-          />
-        </div>
-      )}
+      <h2 className="font-bold text-xl mt-6 mb-4">Add a bio</h2>
+      <textarea
+        placeholder="Write a short bio about yourself"
+        className="py-2 px-3 mb-2 border border-gray-300 rounded"
+        value={bio}
+        onChange={(e) => setBio(e.target.value)}
+        maxLength={250}
+      />
+      <h2 className="font-bold text-xl mb-4 mt-4">Find friends on contact</h2>
+      <label className="flex items-center space-x-2">
+        <input
+          type="checkbox"
+          checked={showFindFriends}
+          onChange={() => setShowFindFriends(!showFindFriends)}
+        />
+        <span>{showFindFriends ? "Visible" : "Invisible"}</span>
+      </label>
       <button
-        onClick={handleNext}
-        className="bg-green-500 text-white py-2 px-4 rounded w-full mt-4"
+        onClick={() => validateStep(6) && handleNext()}
+        className="bg-buttonNext text-white py-2 px-4 rounded-3xl w-full mt-20"
       >
-        Submit
+        Next
       </button>
     </div>
   </div>

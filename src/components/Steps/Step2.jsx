@@ -7,10 +7,14 @@ const Step2 = ({
   handleNext,
   handleBack,
   handleSkip,
+  validateStep,
 }) => (
   <div className="w-full p-2 mb-4">
-    <div className="flex justify-between items-center px-1">
-      <FaAngleLeft onClick={handleBack} className="text-2xl opacity-60" />
+    <div className="flex justify-between items-center px-3 pl-1 pt-5">
+      <FaAngleLeft
+        onClick={handleBack}
+        className="text-2xl opacity-60 cursor-pointer"
+      />
       <button onClick={handleSkip} className="text-gray-500">
         Skip
       </button>
@@ -49,7 +53,7 @@ const Step2 = ({
         </div>
       ))}
       <button
-        onClick={handleNext}
+        onClick={() => validateStep(2) && handleNext()}
         className="bg-buttonNext text-white py-2 px-4 rounded-3xl w-full mt-20"
       >
         Next

@@ -1,6 +1,7 @@
 import Sidebar from "./Sidebar";
 import MainContent from "./MainContent";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function Dashboard({ login, setLogin }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -26,7 +27,7 @@ function Dashboard({ login, setLogin }) {
 
   return (
     <div className="flex">
-      <div className="w-1/10 bg-gray-900 bg-opacity-20">
+      <div className="w-1/10 bg-opacity-20 bg-white">
         {login ? (
           <Sidebar
             sidebarOpen={sidebarOpen}

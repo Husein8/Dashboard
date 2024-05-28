@@ -229,9 +229,9 @@ const Charts = () => {
   }, []);
 
   return (
-    <div className="md:pl-6 bg-white">
+    <div className="md:pl-2 bg-white px-2">
       <div className="flex items-center justify-between mt-4 mb-6">
-        <div className="flex items-center gap-2 m-3">
+        <div className="flex items-center gap-2 mt-2">
           <FaChartBar />
           <h3>Annual report</h3>
         </div>
@@ -244,12 +244,12 @@ const Charts = () => {
         </div>
       </div>
       {openChart ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 sm:gap-x-20 md:gap-x-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 sm:gap-x-20 md:gap-x-6 pb-20 px-2">
           <div className="w-full h-60">
             <h2 className="mb-2">Posts</h2>
             <Line data={areaPoostsData("Posts")} options={chartsStyle} />
           </div>
-          <div className="w-full h-64">
+          <div className="w-full h-60">
             <h2 className="mb-2">Users</h2>
             <Bar data={barUsersData("Users")} options={chartsStyle} />
           </div>
