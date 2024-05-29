@@ -14,7 +14,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { FaUser } from "react-icons/fa";
 
 ChartJS.register(
   CategoryScale,
@@ -28,7 +27,7 @@ ChartJS.register(
   Legend
 );
 
-const areaPoostsData = (label) => ({
+const generateChartData = (label, data, backgroundColor) => ({
   labels: [
     "Jan",
     "Feb",
@@ -46,65 +45,10 @@ const areaPoostsData = (label) => ({
   datasets: [
     {
       label: label,
-      data: [0, 0, 18, 14, 15, 5, 41, 13, 22, 31, 14, 35, 16],
+      data: data,
       fill: true,
-      backgroundColor: "#4F98C3",
-      borderColor: "#4F98C3",
-      borderWidth: 1,
-      tension: 0.4,
-    },
-  ],
-});
-
-const barUsersData = (label) => ({
-  labels: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ],
-  datasets: [
-    {
-      label: label,
-      data: [6, 5, 8, 1, 5, 5, 4, 1, 2, 3, 4, 5, 6],
-      fill: false,
-      backgroundColor: "#00A65A",
-      borderColor: "rgba(75,192,192,1)",
-      borderWidth: 1,
-    },
-  ],
-});
-
-const areaReelsData = (label) => ({
-  labels: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ],
-  datasets: [
-    {
-      label: label,
-      data: [0, 0, 18, 14, 15, 5, 41, 13, 22, 31, 14, 35, 16],
-      fill: true,
-      backgroundColor: "#4F98C3",
-      borderColor: "#4F98C3",
+      backgroundColor: backgroundColor,
+      borderColor: backgroundColor,
       borderWidth: 1,
       tension: 0.4,
     },
@@ -112,7 +56,7 @@ const areaReelsData = (label) => ({
 });
 
 const pieData = {
-  labels: ["paid for ads", "paid for video", "paid for gift"],
+  labels: ["Paid for ads", "Paid for video", "Paid for gift"],
   datasets: [
     {
       data: [25, 50, 40],
@@ -222,9 +166,7 @@ const Charts = () => {
     setIsOpenChart(!openChart);
   };
 
-  // Use useEffect to ensure the charts are rendered immediately
   useEffect(() => {
-    // Trigger a re-render to ensure charts are displayed immediately
     setIsOpenChart(true);
   }, []);
 
@@ -247,15 +189,36 @@ const Charts = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 sm:gap-x-20 md:gap-x-6 pb-20 px-2">
           <div className="w-full h-60">
             <h2 className="mb-2">Posts</h2>
-            <Line data={areaPoostsData("Posts")} options={chartsStyle} />
+            <Line
+              data={generateChartData(
+                "Posts",
+                [0, 0, 18, 14, 15, 5, 41, 13, 22, 31, 14, 35, 16],
+                "#4F98C3"
+              )}
+              options={chartsStyle}
+            />
           </div>
           <div className="w-full h-60">
             <h2 className="mb-2">Users</h2>
-            <Bar data={barUsersData("Users")} options={chartsStyle} />
+            <Bar
+              data={generateChartData(
+                "Users",
+                [6, 5, 8, 1, 5, 5, 4, 1, 2, 3, 4, 5, 6],
+                "#00A65A"
+              )}
+              options={chartsStyle}
+            />
           </div>
           <div className="w-full h-60">
             <h2 className="mb-2">Reels</h2>
-            <Line data={areaReelsData("Reels")} options={chartsStyle} />
+            <Line
+              data={generateChartData(
+                "Reels",
+                [0, 0, 18, 14, 15, 5, 41, 13, 22, 31, 14, 35, 16],
+                "#4F98C3"
+              )}
+              options={chartsStyle}
+            />
           </div>
           <div className="w-full h-60">
             <h2 className="mb-2">Payments</h2>

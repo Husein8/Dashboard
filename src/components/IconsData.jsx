@@ -59,15 +59,15 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
   };
 
   return (
-    <div className="md:ml-2">
-      <div className="flex items-center justify-between bg-white">
-        <div className="py-2 bg-white">
-          <button onClick={toggleSidebar} className="text-xl">
+    <div className="bg-icons">
+      <div className="flex items-center justify-between pl-2 py-2 bg-white">
+        <div className="">
+          <button onClick={toggleSidebar} className="text-xl pt-2">
             <FaBars />
           </button>
         </div>
-        <div className="flex items-center gap-2 relative bg-white">
-          <div className="flex items-center gap-2 cursor-pointer text-xl">
+        <div className="flex items-center gap-2 relative ">
+          <div className="flex items-center gap-2 cursor-pointer text-xl pt-2 pr-5">
             <FaUser onClick={handleAdminClick} />
             <span onClick={handleAdminClick}>Admin</span>
           </div>
@@ -102,12 +102,9 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
       </div>
 
       <h1 className="pt-6 text-3xl mb-5 px-2">Dashboard</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pr-4 pl-2 py-2 border rounded-lg bg-bgMainContent">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pr-4 py-4 pl-3">
         {iconsData.map((item, index) => (
-          <div
-            key={index}
-            className="flex bg-iconsBg border rounded-tl rounded-bl "
-          >
+          <div key={index} className="flex bg-white">
             <div
               className={`container-picture flex items-center justify-center text-5xl ${item.color} px-3 py-4 border rounded-tl rounded-bl`}
             >

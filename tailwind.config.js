@@ -6,7 +6,7 @@ export default {
       colors: {
         DEFAULT: "#3B82F6",
         blue: "#00C0EF",
-        bgMainContent: "#ECF0F4",
+        icons: "#ECF0F4",
         customBlues: "#00C0EF",
         customGreen: "#00A65A",
         customRed: "#DD4B39",
