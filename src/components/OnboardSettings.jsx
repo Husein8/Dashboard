@@ -19,7 +19,7 @@ const OnboardSettings = () => {
   const [interests, setInterests] = useState([]);
   const [photo, setPhoto] = useState(null);
   const [bio, setBio] = useState("");
-  const [showFindFriends, setShowFindFriends] = useState(true);
+  const [showFindFriends, setShowFindFriends] = useState(false);
   const navigate = useNavigate();
 
   const handleNext = () => {

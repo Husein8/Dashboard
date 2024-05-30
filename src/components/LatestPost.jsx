@@ -104,7 +104,7 @@ function LatestPost() {
       {postDashboard ? (
         <div className="pb-100 bg-white">
           <div className="h-0.5 w-full bg"></div>
-          <div className="flex justify-between items-center mb-4 px-2">
+          <div className="flex justify-between items-center mb-4 px-4">
             <h1 className="text-2xl font-bold mt-2">Latest Posts</h1>
             <div className="flex items-center gap-3">
               <button onClick={toggleSidebar} className="text-xl">
@@ -121,7 +121,7 @@ function LatestPost() {
           </div>
           <div>
             {isSidebarVisible ? (
-              <div className="flex flex-col">
+              <div className="flex flex-col px-2">
                 <div className="overflow-x-auto lg:-mx-0">
                   <div className="inline-block min-w-full py-2 ">
                     <div className="overflow-hidden">
@@ -180,7 +180,7 @@ function LatestPost() {
               </div>
             ) : null}
             {isSidebarVisible ? (
-              <button className="float-right mt-8 ml-10 px-3 py-1 border border-transparent rounded hover:border-black">
+              <button className="float-right mt-8 ml-10 px-3 py-1 mr-5 md:mr-5 lg:mr-0 border border-transparent rounded-lg  hover:border-black bg-white">
                 View All Posts
               </button>
             ) : (

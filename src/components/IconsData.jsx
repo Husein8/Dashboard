@@ -122,7 +122,6 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
           </div>
         ))}
       </div>
-      <div className="mt-5 w-full h-0.5  bg"></div>
     </div>
   );
 }

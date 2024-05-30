@@ -26,52 +26,44 @@ const Step4 = ({
       </p>
       <div className="grid grid-cols-2 gap-2">
         {[
-          "Gaming",
-          "Music",
-          "Book",
-          "Language",
-          "Photography",
-          "Fashion",
-          "Arts",
-          "Nature",
-          "Football",
-          "Politics",
-          "Finance",
-          "GYM",
-          "Business",
-          "Animal",
-          "Travel",
-          "Cars",
-          "Culture",
+          "#Gaming",
+          "#Music",
+          "#Book",
+          "#Language",
+          "#Photography",
+          "#Fashion",
+          "#Arts",
+          "#Nature",
+          "#Football",
+          "#Politics",
+          "#Finance",
+          "#GYM",
+          "#Business",
+          "#Animal",
+          "#Travel",
+          "#Cars",
+          "#Culture",
         ].map((interest) => (
-          <label
+          <button
             key={interest}
-            className={`flex items-center space-x-2 p-2 ${
-              interests.includes(interest)
-                ? "bg-green-500 text-white rounded"
-                : ""
+            onClick={() => {
+              if (interests.includes(interest)) {
+                setInterests(interests.filter((i) => i !== interest));
+              } else {
+                setInterests([...interests, interest]);
+              }
+            }}
+            className={`flex items-center justify-center py-2 rounded-lg border  border-gray-300 ${
+              interests.includes(interest) ? "bg-buttonNext text-white" : ""
             }`}
           >
-            <input
-              type="checkbox"
-              value={interest}
-              checked={interests.includes(interest)}
-              onChange={(e) => {
-                if (e.target.checked) {
-                  setInterests([...interests, interest]);
-                } else {
-                  setInterests(interests.filter((i) => i !== interest));
-                }
-              }}
-              className="mr-2"
-            />
             {interest}
-          </label>
+          </button>
         ))}
       </div>
       <button
         onClick={() => validateStep(4) && handleNext()}
-        className="bg-buttonNext text-white py-2 px-4 rounded-3xl w-full mt-20"
+        className="bg-buttonNext text-white py-2 px-4 rounded-lg w-full mt-20"
       >
         Next
       </button>

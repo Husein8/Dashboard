@@ -12,7 +12,7 @@ const Step6 = ({
   setShowFindFriends,
 }) => (
   <div className="w-full py-4 mb-4">
-    <div className="flex justify-between items-center px-4 pt-3">
+    <div className="flex justify-between items-center px-2 pt-3">
       <FaAngleLeft
         onClick={handleBack}
         className="text-2xl opacity-60 cursor-pointer"
@@ -37,7 +37,15 @@ const Step6 = ({
           checked={showFindFriends}
           onChange={() => setShowFindFriends(!showFindFriends)}
         />
-        <span>{showFindFriends ? "Visible" : "Invisible"}</span>
+
+        <p>{showFindFriends ? "Close the list" : "Check ur friends"}</p>
+        {showFindFriends ? (
+          <>
+            <div>Find friends here</div>
+          </>
+        ) : (
+          ""
+        )}
       </label>
       <button
         onClick={() => validateStep(6) && handleNext()}

@@ -10,7 +10,7 @@ const Step2 = ({
   validateStep,
 }) => (
   <div className="w-full p-2 mb-4">
-    <div className="flex justify-between items-center px-3 pl-1 pt-5">
+    <div className="flex justify-between items-center px-1 pl-1 pt-5">
       <FaAngleLeft
         onClick={handleBack}
         className="text-2xl opacity-60 cursor-pointer"

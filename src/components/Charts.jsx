@@ -157,10 +157,11 @@ const chartOptions = {
     },
   },
   maintainAspectRatio: false,
+  responsive: true,
 };
 
 const Charts = () => {
-  const [openChart, setIsOpenChart] = useState(true);
+  const [openChart, setIsOpenChart] = useState(false);
 
   const toggleChart = () => {
     setIsOpenChart(!openChart);
@@ -172,7 +173,7 @@ const Charts = () => {
 
   return (
     <div className="md:pl-2 bg-white px-2">
-      <div className="flex items-center justify-between mt-4 mb-6">
+      <div className="flex items-center justify-between mt-4 mb-6 px-3">
         <div className="flex items-center gap-2 mt-2">
           <FaChartBar />
           <h3>Annual report</h3>
@@ -186,7 +187,7 @@ const Charts = () => {
         </div>
       </div>
       {openChart ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 sm:gap-x-20 md:gap-x-6 pb-20 px-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 sm:gap-x-20 md:gap-x-6 pb-20 px-4">
           <div className="w-full h-60">
             <h2 className="mb-2">Posts</h2>
             <Line
@@ -229,7 +230,9 @@ const Charts = () => {
             <Bar data={coinData} options={chartsStyle} />
           </div>
         </div>
-      ) : null}
+      ) : (
+        ""
+      )}
     </div>
   );
 };
