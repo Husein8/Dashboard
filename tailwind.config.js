@@ -12,6 +12,7 @@ export default {
         customRed: "#DD4B39",
         buttonNext: "#00b071",
         iconsBg: "#FFFFFF",
+        adminSettings: "#0099FF",
       },
     },
   },

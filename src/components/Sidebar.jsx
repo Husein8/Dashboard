@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaTachometerAlt, FaFile, FaFlag, FaBars } from "react-icons/fa";
 import {
   FaUsers,
@@ -387,8 +388,14 @@ const sectionsData = [
     showArrows: true,
     items: [
       {
+        text: "Onboard Settings",
+        icon: <FaWrench />,
+        path: "/adminSettings",
+      },
+      {
         text: "Contact Information",
         icon: <FaWrench />,
+        path: "/contactInfo",
       },
       {
         text: "General Setting",
@@ -418,9 +425,8 @@ const sectionsData = [
   },
 ];
 
-function Sidebar({ sidebarOpen, login }) {
+function Sidebar({ sidebarOpen }) {
   const [sections, setSections] = useState(sectionsData);
-  const [subSections, setSubSections] = useState(sectionsData);
 
   const toggleSection = (index) => {
     const updatedSections = [...sections];
@@ -428,116 +434,70 @@ function Sidebar({ sidebarOpen, login }) {
     setSections(updatedSections);
   };
 
-  const toggleSubSection = (sectionIndex, itemIndex) => {
-    const updatedSections = [...subSections];
-    const updatedSubSection = updatedSections[sectionIndex].items[itemIndex];
-    updatedSubSection.showSubContent = !updatedSubSection.showSubContent;
-    setSubSections(updatedSections);
-  };
-
   return (
     <div className="bg-white">
       {sidebarOpen && (
-        <>
-          <div className={`${sidebarOpen ? "sm:block" : "hidden"}`}>
-            <div className="border-r border-x-gray-400 border-opacity-55">
-              <h3 className="md:block text-center text-black text-2xl pt-4 pb-4">
-                SayHi
-              </h3>
-              <div>
-                {sections.map((section, sectionIndex) => (
-                  <div key={sectionIndex} className="gap-1 py-4">
-                    <div
-                      className="flex items-center justify-between opacity-80 hover:opacity-100 hover:font-medium cursor-pointer"
-                      onClick={() => toggleSection(sectionIndex)}
-                    >
-                      <div className="flex items-center gap-2 ml-3">
-                        <p className="text-base">{section.icon}</p>
-                        <p className="text-base text-black md:block">
-                          {window.innerWidth < 768
-                            ? section.title.split(" ")[0]
-                            : section.title}
-                        </p>
-                      </div>
-                      {section.showArrows && (
-                        <div>
-                          {section.showContent ? (
-                            <IoIosArrowDown className="mr-5 text-lg" />
-                          ) : (
-                            <MdKeyboardArrowLeft className="mr-5 text-lg" />
-                          )}
-                        </div>
-                      )}
+        <div className={`${sidebarOpen ? "sm:block" : "hidden"}`}>
+          <div className="border-r border-x-gray-400 border-opacity-55">
+            <h3 className="md:block text-center text-black text-2xl pt-4 pb-4">
+              SayHi
+            </h3>
+            <div>
+              {sections.map((section, sectionIndex) => (
+                <div key={sectionIndex} className="gap-1 py-4">
+                  <div
+                    className="flex items-center justify-between opacity-80 hover:opacity-100 hover:font-medium cursor-pointer"
+                    onClick={() => toggleSection(sectionIndex)}
+                  >
+                    <div className="flex items-center gap-2 ml-3">
+                      <p className="text-base">{section.icon}</p>
+                      <p className="text-base text-black md:block">
+                        {window.innerWidth < 768
+                          ? section.title.split(" ")[0]
+                          : section.title}
+                      </p>
                     </div>
-                    {section.showContent && section.items ? (
-                      <ul
-                        className={`pl-2 pt-2 ml-2 ${
-                          section.showContent ? "opacity-100" : "opacity-0"
-                        } transition-opacity ease-in-out duration-500`}
-                      >
-                        {section.items.map((item, itemIndex) => (
-                          <li
-                            key={itemIndex}
-                            className="items-center justify-between pt-4 gap-2"
-                          >
-                            <div className="flex items-center justify-between opacity-80 hover:opacity-100 cursor-pointer">
-                              <div className="flex items-center gap-2 ml-2">
-                                <span className="text-sm opacity-80">
-                                  {item.icon}
-                                </span>
-                                <span className="text-sm">{item.text}</span>
-                              </div>
-                              {item.showArrowsSubContent && (
-                                <div
-                                  className="cursor-pointer"
-                                  onClick={() =>
-                                    toggleSubSection(sectionIndex, itemIndex)
-                                  }
-                                >
-                                  {item.showSubContent ? (
-                                    <IoIosArrowDown className="mr-5" />
-                                  ) : (
-                                    <MdKeyboardArrowLeft className="mr-5" />
-                                  )}
-                                </div>
-                              )}
-                            </div>
-                            {item.showSubContent ? (
-                              <div
-                                className="flex items-center justify-between pt-2"
-                                onClick={() => toggleSection(sectionIndex)}
-                              >
-                                <div className="flex items-center gap-2 ml-4">
-                                  {item.subContent && (
-                                    <ul className="flex flex-col">
-                                      {item.subContent.map(
-                                        (subItem, subItemIndex) => (
-                                          <li
-                                            className="flex items-center pt-2 pl-1 text-sm"
-                                            key={subItemIndex}
-                                          >
-                                            <div className="flex items-center text-sm gap-2 opacity-80 hover:opacity-100 hover:font-medium cursor-pointer">
-                                              {subItem.icon}
-                                              {subItem.text}
-                                            </div>
-                                          </li>
-                                        )
-                                      )}
-                                    </ul>
-                                  )}
-                                </div>
-                              </div>
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
+                    {section.showArrows && (
+                      <div>
+                        {section.showContent ? (
+                          <IoIosArrowDown className="mr-5 text-lg" />
+                        ) : (
+                          <MdKeyboardArrowLeft className="mr-5 text-lg" />
+                        )}
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
+                  {section.showContent && section.items ? (
+                    <ul
+                      className={`pl-2 pt-2 ml-2 ${
+                        section.showContent ? "opacity-100" : "opacity-0"
+                      } transition-opacity ease-in-out duration-500`}
+                    >
+                      {section.items.map((item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className="items-center justify-between pt-4 gap-2"
+                        >
+                          <Link
+                            to={item.path || "#"}
+                            className="flex items-center justify-between opacity-80 hover:opacity-100 cursor-pointer"
+                          >
+                            <div className="flex items-center gap-2 ml-2">
+                              <span className="text-sm opacity-80">
+                                {item.icon}
+                              </span>
+                              <span className="text-sm">{item.text}</span>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
+              ))}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
