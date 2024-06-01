@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import MainContent from "./MainContent";
 import { useEffect, useState } from "react";
-import Footer from "./Footer";
+import HeaderSidebarAdmin from "./HeaderSidebarAdmin";
 
 function Dashboard({ login, setLogin }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -40,6 +40,7 @@ function Dashboard({ login, setLogin }) {
         )}
       </div>
       <div className="w-full bg-gray-900 bg-opacity-20">
+        <HeaderSidebarAdmin toggleSidebar={toggleSidebar} login={login} />
         <MainContent
           sidebarOpen={sidebarOpen}
           toggleSidebar={toggleSidebar}

@@ -36,31 +36,10 @@ const iconsData = [
   },
 ];
 
-function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
-  const navigate = useNavigate();
-  const [showAdminContainer, setShowAdminContainer] = useState(false);
-
-  const handleAdminClick = () => {
-    if (!login) {
-      navigate("/");
-    } else {
-      setShowAdminContainer(!showAdminContainer);
-    }
-  };
-
-  const handleLogout = () => {
-    navigate("/");
-  };
-
-  // handleSettingsClick;
-
-  const handleSettingsClick = () => {
-    navigate("settings");
-  };
-
+function IconsData() {
   return (
     <div className="bg-icons">
-      <div className="flex items-center justify-between pl-2 py-2 bg-white">
+      {/* <div className="flex items-center justify-between pl-2 py-2 bg-white">
         <div className="">
           <button onClick={toggleSidebar} className="text-xl pt-2">
             <FaBars />
@@ -99,9 +78,9 @@ function IconsData({ sidebarOpen, toggleSidebar, login, setLogin }) {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
 
-      <h1 className="pt-6 text-3xl mb-5 px-2">Dashboard</h1>
+      <h1 className="pt-5 text-3xl mb-5 px-2">Dashboard</h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pr-4 py-4 pl-3">
         {iconsData.map((item, index) => (
           <div key={index} className="flex bg-white">

@@ -4,14 +4,32 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 const AdminSettings = () => {
-  const { settings, toggleSetting, setBioMaxLength } = useAdminSettings();
+  const {
+    settings,
+    toggleSetting,
+    setBioMaxLength,
+    addInterest,
+    removeInterest,
+  } = useAdminSettings();
   const [bioLength, setBioLength] = useState(settings.bioMaxLength);
+  const [newInterest, setNewInterest] = useState("");
   const navigate = useNavigate();
 
   const handleBioLengthChange = (e) => {
     const length = parseInt(e.target.value, 10);
     setBioLength(length);
     setBioMaxLength(length);
+  };
+
+  const handleAddInterest = () => {
+    if (newInterest) {
+      addInterest(newInterest);
+      setNewInterest("");
+    }
+  };
+
+  const handleRemoveInterest = (interest) => {
+    removeInterest(interest);
   };
 
   return (
@@ -66,14 +84,40 @@ const AdminSettings = () => {
           </span>
         </div>
         <div className="flex items-center">
-          <label className="mr-4">Location (State/City/Country)</label>
+          <label className="mr-4">State</label>
           <input
             type="checkbox"
-            checked={settings.isLocationRequired}
-            onChange={() => toggleSetting("isLocationRequired")}
+            checked={settings.isStateRequired}
+            onChange={() => toggleSetting("isStateRequired")}
           />
-          <span className="ml-2 text-sm md:text-base">
-            {settings.isLocationRequired
+          <span className="ml-2">
+            {settings.isStateRequired
+              ? "Now it is required"
+              : "Now it is optional"}
+          </span>
+        </div>
+        <div className="flex items-center">
+          <label className="mr-4">City</label>
+          <input
+            type="checkbox"
+            checked={settings.isCityRequired}
+            onChange={() => toggleSetting("isCityRequired")}
+          />
+          <span className="ml-2">
+            {settings.isCityRequired
+              ? "Now it is required"
+              : "Now it is optional"}
+          </span>
+        </div>
+        <div className="flex items-center">
+          <label className="mr-4">Country</label>
+          <input
+            type="checkbox"
+            checked={settings.isCountryRequired}
+            onChange={() => toggleSetting("isCountryRequired")}
+          />
+          <span className="ml-2">
+            {settings.isCountryRequired
               ? "Now it is required"
               : "Now it is optional"}
           </span>
@@ -90,6 +134,35 @@ const AdminSettings = () => {
               ? "Now it is required"
               : "Now it is optional"}
           </span>
+        </div>
+        <div className="flex items-center">
+          <input
+            type="text"
+            value={newInterest}
+            onChange={(e) => setNewInterest(e.target.value)}
+            className="border rounded p-1 mr-2"
+            placeholder="Add interest"
+          />
+          <button
+            onClick={handleAddInterest}
+            className="p-1 bg-blue-500 text-white rounded"
+          >
+            Add
+          </button>
+        </div>
+        <div className="space-y-2">
+          {settings.interestsList &&
+            settings.interestsList.map((interest) => (
+              <div key={interest} className="flex items-center justify-between">
+                <span>{interest}</span>
+                <button
+                  onClick={() => handleRemoveInterest(interest)}
+                  className="p-1 bg-red-500 text-white rounded"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
         </div>
         <div className="flex items-center">
           <label className="mr-4">Photo</label>
