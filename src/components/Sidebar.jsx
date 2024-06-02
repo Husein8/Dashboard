@@ -21,7 +21,7 @@ import { HiUser } from "react-icons/hi2";
 import { VscListUnordered } from "react-icons/vsc";
 import { BiSolidCoupon } from "react-icons/bi";
 import { GiTicket } from "react-icons/gi";
-import { IoMdTv, IoIosPlay } from "react-icons/io";
+import { IoMdTv, IoIosPlay, IoIosArrowForward } from "react-icons/io";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { CiMoneyBill } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
@@ -32,6 +32,7 @@ const sectionsData = [
     title: "Dashboard",
     showContent: false,
     showArrows: false,
+    path: "/dashboard",
   },
   {
     icon: <HiUser />,
@@ -445,7 +446,8 @@ function Sidebar({ sidebarOpen }) {
             <div>
               {sections.map((section, sectionIndex) => (
                 <div key={sectionIndex} className="gap-1 py-4">
-                  <div
+                  <Link
+                    to={section.path || "#"}
                     className="flex items-center justify-between opacity-80 hover:opacity-100 hover:font-medium cursor-pointer"
                     onClick={() => toggleSection(sectionIndex)}
                   >
@@ -462,11 +464,11 @@ function Sidebar({ sidebarOpen }) {
                         {section.showContent ? (
                           <IoIosArrowDown className="mr-5 text-lg" />
                         ) : (
-                          <MdKeyboardArrowLeft className="mr-5 text-lg" />
+                          <IoIosArrowForward className="mr-5 text-lg" />
                         )}
                       </div>
                     )}
-                  </div>
+                  </Link>
                   {section.showContent && section.items ? (
                     <ul
                       className={`pl-2 pt-2 ml-2 ${

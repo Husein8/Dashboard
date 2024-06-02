@@ -17,6 +17,7 @@ const defaultSettings = {
   isBioRequired: false,
   bioMaxLength: 200,
   isFindFriendsVisible: false,
+  interestsList: ["Football", "Chess", "Reading", "Traveling", "Cooking"],
 };
 
 export const AdminSettingsProvider = ({ children }) => {
@@ -43,9 +44,31 @@ export const AdminSettingsProvider = ({ children }) => {
     }));
   };
 
+  const addInterest = (interest) => {
+    setSettings((prevSettings) => ({
+      ...prevSettings,
+      interestsList: [...prevSettings.interestsList, interest],
+    }));
+  };
+
+  const removeInterest = (interest) => {
+    setSettings((prevSettings) => ({
+      ...prevSettings,
+      interestsList: prevSettings.interestsList.filter(
+        (item) => item !== interest
+      ),
+    }));
+  };
+
   return (
     <AdminSettingsContext.Provider
-      value={{ settings, toggleSetting, setBioMaxLength }}
+      value={{
+        settings,
+        toggleSetting,
+        setBioMaxLength,
+        addInterest,
+        removeInterest,
+      }}
     >
       {children}
     </AdminSettingsContext.Provider>

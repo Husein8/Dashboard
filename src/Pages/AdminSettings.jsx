@@ -33,17 +33,11 @@ const AdminSettings = () => {
   };
 
   return (
-    <div className="p-4 bg-adminSettings lg:pb-44 md:pt-6">
-      <button
-        onClick={() => navigate(-1)}
-        className="text-xl px-2 absolute top-6 rounded-full hover:bg-gray-200 transition duration-300"
-      >
-        <FaArrowLeft />
-      </button>
+    <div className="p-4 lg:pb-9 md:pt-6">
       <div className="flex flex-row items-center justify-evenly gap-2 pb-4">
         <h1 className="text-2xl font-bold">Admin Settings</h1>
       </div>
-      <div className="p-6 bg-white border rounded-lg shadow-lg space-y-4 sm:w-3/4 lg:w-1/2 xl:w-1/3 mx-auto">
+      <div className="p-6 bg-white border rounded-lg shadow-lg space-y-4 mx-auto">
         <div className="flex items-center">
           <label className="mr-4">First Name</label>
           <input
@@ -145,7 +139,7 @@ const AdminSettings = () => {
           />
           <button
             onClick={handleAddInterest}
-            className="p-1 bg-blue-500 text-white rounded"
+            className="p-1 bg-blue-500 text-black rounded"
           >
             Add
           </button>
@@ -159,7 +153,7 @@ const AdminSettings = () => {
                   onClick={() => handleRemoveInterest(interest)}
                   className="p-1 bg-red-500 text-white rounded"
                 >
-                  Remove
+                  X
                 </button>
               </div>
             ))}
