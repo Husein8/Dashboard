@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAdminSettings } from "../context/AdminSettingsContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 const AdminSettings = () => {
   const {
@@ -147,13 +148,13 @@ const AdminSettings = () => {
         <div className="space-y-2">
           {settings.interestsList &&
             settings.interestsList.map((interest) => (
-              <div key={interest} className="flex items-center justify-between">
+              <div key={interest} className="flex items-center gap-4">
                 <span>{interest}</span>
                 <button
                   onClick={() => handleRemoveInterest(interest)}
                   className="p-1 bg-red-500 text-white rounded"
                 >
-                  X
+                  <MdDelete />
                 </button>
               </div>
             ))}

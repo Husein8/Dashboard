@@ -46,9 +46,9 @@ const sectionsData = [
     showContent: false,
     showArrows: true,
     items: [
-      { text: "User", icon: <FaUsers /> },
-      { text: "Users Verification", icon: <FaUsers /> },
-      { text: "User Profile Category", icon: <FaUsers /> },
+      { text: "User", icon: <FaUsers />, path: "/users" },
+      // { text: "Users Verification", icon: <FaUsers /> },
+      // { text: "User Profile Category", icon: <FaUsers /> },
     ],
   },
   {

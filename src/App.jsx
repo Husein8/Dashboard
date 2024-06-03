@@ -7,6 +7,7 @@ import AdminSettings from "./Pages/AdminSettings";
 import ContactInfo from "./Pages/ContactInfo";
 import { AdminSettingsProvider } from "./context/AdminSettingsContext";
 import MainLayout from "./components/MainLayout";
+import Users from "./Pages/Users";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/dashboard/settings" element={<OnboardSettings />} />
             <Route path="/adminSettings" element={<AdminSettings />} />
             <Route path="/contactInfo" element={<ContactInfo />} />
+            <Route path="/users" element={<Users />} />
           </Route>
         </Routes>
       </Router>
