@@ -1,24 +1,171 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const generateUsers = (num) => {
-  const users = [];
-  for (let i = 1; i <= num; i++) {
-    users.push({
-      id: i,
-      name: `User ${i}`,
-      username: `user${i}`,
-      email: `user${i}@gmail.com`,
-      status: "Active",
-      createdAt: new Date().toLocaleString(),
-    });
-  }
-  return users;
-};
-
-const initialUsers = generateUsers(50);
+const usersData = [
+  {
+    id: 1,
+    name: "Alice Smith",
+    username: "alice",
+    email: "alice@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 2,
+    name: "Bob Johnson",
+    username: "bob",
+    email: "bob@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 3,
+    name: "Charlie Brown",
+    username: "charlie",
+    email: "charlie@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 4,
+    name: "Diana Prince",
+    username: "diana",
+    email: "diana@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 5,
+    name: "Eve Adams",
+    username: "eve",
+    email: "eve@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 6,
+    name: "Frank Miller",
+    username: "frank",
+    email: "frank@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 7,
+    name: "Grace Lee",
+    username: "grace",
+    email: "grace@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 8,
+    name: "Hank Hill",
+    username: "hank",
+    email: "hank@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 9,
+    name: "Ivy Green",
+    username: "ivy",
+    email: "ivy@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 10,
+    name: "Jack White",
+    username: "jack",
+    email: "jack@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 11,
+    name: "Karen Black",
+    username: "karen",
+    email: "karen@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 12,
+    name: "Larry King",
+    username: "larry",
+    email: "larry@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 13,
+    name: "Mona Lisa",
+    username: "mona",
+    email: "mona@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 14,
+    name: "Nina Simone",
+    username: "nina",
+    email: "nina@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 15,
+    name: "Oscar Wilde",
+    username: "oscar",
+    email: "oscar@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 16,
+    name: "Paul Walker",
+    username: "paul",
+    email: "paul@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 17,
+    name: "Quincy Jones",
+    username: "quincy",
+    email: "quincy@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 18,
+    name: "Rachel Green",
+    username: "rachel",
+    email: "rachel@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 19,
+    name: "Steve Rogers",
+    username: "steve",
+    email: "steve@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+  {
+    id: 20,
+    name: "Tony Stark",
+    username: "tony",
+    email: "tony@gmail.com",
+    status: "Active",
+    createdAt: new Date().toLocaleString(),
+  },
+];
 
 const Users = () => {
-  const [users, setUsers] = useState(initialUsers);
+  const [users, setUsers] = useState(usersData);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchName, setSearchName] = useState("");
   const [searchUsername, setSearchUsername] = useState("");
@@ -96,7 +243,12 @@ const Users = () => {
                   {user.createdAt}
                 </td>
                 <td className="py-2 px-4 border text-center">
-                  <button className="text-blue-500 hover:underline">👁️</button>
+                  <Link
+                    to={`/userDetails/${user.id}`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    👁️
+                  </Link>
                   <button
                     className="text-red-500 hover:underline ml-1"
                     onClick={() => deleteUser(user.id)}
