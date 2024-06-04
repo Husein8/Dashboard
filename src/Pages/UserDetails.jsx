@@ -6,281 +6,220 @@ const userDetailsData = {
     name: "Alice Smith",
     username: "alice",
     email: "alice@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   2: {
     name: "Bob Johnson",
     username: "bob",
     email: "bob@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   3: {
     name: "Charlie Brown",
     username: "charlie",
     email: "charlie@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   4: {
     name: "Diana Prince",
     username: "diana",
     email: "diana@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   5: {
     name: "Eve Adams",
     username: "eve",
     email: "eve@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
+
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   6: {
     name: "Frank Miller",
     username: "frank",
     email: "frank@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   7: {
     name: "Grace Lee",
     username: "grace",
     email: "grace@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   8: {
     name: "Hank Hill",
     username: "hank",
     email: "hank@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   9: {
     name: "Ivy Green",
     username: "ivy",
     email: "ivy@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    loginMode: "social",
+    deviceType: "iOS",
+    deviceModel: "Rosemary’s iPhone",
+    loggedAt: "04/06/2024 10:35 AM",
+    loginIp: "64.44.177.36",
   },
   10: {
     name: "Jack White",
     username: "jack",
     email: "jack@gmail.com",
-    role: "User",
     status: "Active",
     isVerified: false,
     country: "United States of America",
+    state: "state",
+    city: "city",
     isPhoneVerified: false,
     isEmailVerified: true,
     bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  11: {
-    name: "Karen Black",
-    username: "karen",
-    email: "karen@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  12: {
-    name: "Larry King",
-    username: "larry",
-    email: "larry@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  13: {
-    name: "Mona Lisa",
-    username: "mona",
-    email: "mona@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  14: {
-    name: "Nina Simone",
-    username: "nina",
-    email: "nina@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  15: {
-    name: "Oscar Wilde",
-    username: "oscar",
-    email: "oscar@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  16: {
-    name: "Paul Walker",
-    username: "paul",
-    email: "paul@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  17: {
-    name: "Quincy Jones",
-    username: "quincy",
-    email: "quincy@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  18: {
-    name: "Rachel Green",
-    username: "rachel",
-    email: "rachel@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  19: {
-    name: "Steve Rogers",
-    username: "steve",
-    email: "steve@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
-  },
-  20: {
-    name: "Tony Stark",
-    username: "tony",
-    email: "tony@gmail.com",
-    role: "User",
-    status: "Active",
-    isVerified: false,
-    country: "United States of America",
-    isPhoneVerified: false,
-    isEmailVerified: true,
-    bio: "",
-    description: "",
-    availableBalance: 0,
+    availableCoin: 0,
+    lastActive: "04/06/2024 10:35 AM",
+    createdDate: "04/06/2024 10:35 AM",
+    image: "",
+    // loginMode: "social",
+    // deviceType: "iOS",
+    // deviceModel: "Rosemary’s iPhone",
+    // loggedAt: "04/06/2024 10:35 AM",
+    // loginIp: "64.44.177.36",
   },
 };
 
@@ -311,10 +250,6 @@ const UserDetails = () => {
               <td className="py-2 px-4 border">{user.email}</td>
             </tr>
             <tr>
-              <th className="py-2 px-4 border">Role</th>
-              <td className="py-2 px-4 border">{user.role}</td>
-            </tr>
-            <tr>
               <th className="py-2 px-4 border">Status</th>
               <td className="py-2 px-4 border">{user.status}</td>
             </tr>
@@ -327,6 +262,14 @@ const UserDetails = () => {
             <tr>
               <th className="py-2 px-4 border">Country</th>
               <td className="py-2 px-4 border">{user.country}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">State</th>
+              <td className="py-2 px-4 border">{user.state}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">City</th>
+              <td className="py-2 px-4 border">{user.city}</td>
             </tr>
             <tr>
               <th className="py-2 px-4 border">Is Phone Verified?</th>
@@ -342,18 +285,70 @@ const UserDetails = () => {
             </tr>
             <tr>
               <th className="py-2 px-4 border">Bio</th>
-              <td className="py-2 px-4 border">{user.bio}</td>
+              <td className="py-2 px-4 border">
+                {user.bio ? user.bio : "not set"}
+              </td>
             </tr>
             <tr>
-              <th className="py-2 px-4 border">Description</th>
-              <td className="py-2 px-4 border">{user.description}</td>
+              <th className="py-2 px-4 border">Available Coin</th>
+              <td className="py-2 px-4 border">{user.availableCoin}</td>
             </tr>
             <tr>
-              <th className="py-2 px-4 border">Available Balance</th>
-              <td className="py-2 px-4 border">{user.availableBalance}</td>
+              <th className="py-2 px-4 border">Last Active</th>
+              <td className="py-2 px-4 border">{user.lastActive}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Created date</th>
+              <td className="py-2 px-4 border">{user.createdDate}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Image</th>
+              <td className="py-2 px-4 border">{user.image}</td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <div className="bg-white px-2 pb-2">
+        <h2 className="text-xl mb-4 mt-5 font-medium">
+          User last login detail
+        </h2>
+        <div className="overflow-x-auto ">
+          {/* check for all of this, if all of this doesnt exist then dont render it 
+            // loginMode: "social",
+    // deviceType: "iOS",
+    // deviceModel: "Rosemary’s iPhone",
+    // loggedAt: "04/06/2024 10:35 AM",
+    // loginIp: "64.44.177.36",
+             */}
+          {user.logindMode ? (
+            <table className="min-w-full bg-white border border-gray-200">
+              <tbody>
+                <tr>
+                  <th className="py-2 px-4 border">Login Mode</th>
+                  <td className="py-2 px-4 border">{user.loginMode}</td>
+                </tr>
+                <tr>
+                  <th className="py-2 px-4 border">Device Type</th>
+                  <td className="py-2 px-4 border">{user.deviceType}</td>
+                </tr>
+                <tr>
+                  <th className="py-2 px-4 border">Device Model</th>
+                  <td className="py-2 px-4 border">{user.deviceModel}</td>
+                </tr>
+                <tr>
+                  <th className="py-2 px-4 border">Logged At</th>
+                  <td className="py-2 px-4 border">{user.loggedAt}</td>
+                </tr>
+                <tr>
+                  <th className="py-2 px-4 border">Login Ip</th>
+                  <td className="py-2 px-4 border">{user.loginIp}</td>
+                </tr>
+              </tbody>
+            </table>
+          ) : (
+            <p>No detail available</p>
+          )}
+        </div>
       </div>
     </div>
   );
