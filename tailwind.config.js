@@ -13,8 +13,9 @@ export default {
         buttonNext: "#00b071",
         iconsBg: "#FFFFFF",
         adminSettings: "#0099FF",
+        buttonsColor: "#367FA9",
       },
     },
+    plugins: [],
   },
-  plugins: [],
 };
