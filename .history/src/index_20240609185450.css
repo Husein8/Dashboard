@@ -3,5 +3,5 @@
 @import "tailwindcss/utilities";
 
 .bg-svg {
-  background-image: url("wave.png");
+  background-image: "";
 }

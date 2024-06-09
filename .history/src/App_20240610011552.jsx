@@ -9,6 +9,7 @@ import { AdminSettingsProvider } from "./context/AdminSettingsContext";
 import MainLayout from "./components/MainLayout";
 import Users from "./Pages/Users";
 import UserDetails from "./Pages/UserDetails";
+import UpdateUser from "./Pages/UpdateUser";
 import UpdateCoinUser from "./Pages/UpdateCoinUser";
 import { UserProvider } from "./context/UserContext";
 import UpdateUserInfo from "./Pages/UpdateUserInfo";

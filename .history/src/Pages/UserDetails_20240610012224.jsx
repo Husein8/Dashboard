@@ -18,7 +18,7 @@ const UserDetails = () => {
   };
 
   const handleDeleteClick = () => {
-    // later add logic to delete the user
+    // Logic to delete the user
     console.log(`User with ID ${id} deleted`);
     navigate("/users");
   };

@@ -18,7 +18,7 @@ const UserDetails = () => {
   };
 
   const handleDeleteClick = () => {
-    // later add logic to delete the user
+    // Logic to delete the user
     console.log(`User with ID ${id} deleted`);
     navigate("/users");
   };
@@ -30,7 +30,7 @@ const UserDetails = () => {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-xl mb-3 font-medium">User Detail: {user.name}</h2>
-      <div className="my-4">
+      <div className="mt-4">
         <button
           onClick={handleUpdateClick}
           className="mr-2 bg-buttonsColor text-white px-4 py-2 rounded"
@@ -108,9 +108,7 @@ const UserDetails = () => {
           </tbody>
         </table>
         <div className=" bg-white">
-          <h2 className="mt-5 mb-3 pl-2 pt-2 text-xl font-normal ">
-            User login detail:
-          </h2>
+          <h2 className="pt-5">User login detail:</h2>
           <table className="min-w-full bg-white border border-gray-200">
             <tbody>
               <tr>

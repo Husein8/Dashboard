@@ -9,9 +9,9 @@ import { AdminSettingsProvider } from "./context/AdminSettingsContext";
 import MainLayout from "./components/MainLayout";
 import Users from "./Pages/Users";
 import UserDetails from "./Pages/UserDetails";
+import UpdateUser from "./Pages/UpdateUser";
 import UpdateCoinUser from "./Pages/UpdateCoinUser";
 import { UserProvider } from "./context/UserContext";
-import UpdateUserInfo from "./Pages/UpdateUserInfo";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -32,7 +32,7 @@ const App = () => {
               <Route path="/contactInfo" element={<ContactInfo />} />
               <Route path="/users" element={<Users />} />
               <Route path="/userDetails/:id" element={<UserDetails />} />
-              <Route path="/update/:id" element={<UpdateUserInfo />} />
+              <Route path="/update/:id" element={<UpdateUser />} />
               <Route path="/update-coin/:id" element={<UpdateCoinUser />} />
             </Route>
           </Routes>

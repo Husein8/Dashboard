@@ -18,7 +18,7 @@ const UserDetails = () => {
   };
 
   const handleDeleteClick = () => {
-    // later add logic to delete the user
+    // Logic to delete the user
     console.log(`User with ID ${id} deleted`);
     navigate("/users");
   };
@@ -30,7 +30,7 @@ const UserDetails = () => {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-xl mb-3 font-medium">User Detail: {user.name}</h2>
-      <div className="my-4">
+      <div className="mt-4">
         <button
           onClick={handleUpdateClick}
           className="mr-2 bg-buttonsColor text-white px-4 py-2 rounded"
@@ -107,53 +107,6 @@ const UserDetails = () => {
             </tr>
           </tbody>
         </table>
-        <div className=" bg-white">
-          <h2 className="mt-5 mb-3 pl-2 pt-2 text-xl font-normal ">
-            User login detail:
-          </h2>
-          <table className="min-w-full bg-white border border-gray-200">
-            <tbody>
-              <tr>
-                <th className="py-2 px-4 border">Available Coin</th>
-                <td className="py-2 px-4 border">{user.availableCoin}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Last Active</th>
-                <td className="py-2 px-4 border">{user.lastActive}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Created date</th>
-                <td className="py-2 px-4 border">{user.createdDate}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Image</th>
-                <td className="py-2 px-4 border">
-                  {user.image ? user.image : "not set"}
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Login Mode</th>
-                <td className="py-2 px-4 border">{user.loginMode}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Device Type</th>
-                <td className="py-2 px-4 border">{user.deviceType}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Device Model</th>
-                <td className="py-2 px-4 border">{user.deviceModel}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Logged At</th>
-                <td className="py-2 px-4 border">{user.loggedAt}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Login IP</th>
-                <td className="py-2 px-4 border">{user.loginIp}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   );

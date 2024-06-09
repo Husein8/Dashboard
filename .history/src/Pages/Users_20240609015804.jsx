@@ -162,22 +162,6 @@ const usersData = [
     status: "Active",
     createdAt: new Date().toLocaleString(),
   },
-  {
-    id: 21,
-    name: "Tony Stark",
-    username: "tony",
-    email: "tony@gmail.com",
-    status: "Active",
-    createdAt: new Date().toLocaleString(),
-  },
-  {
-    id: 22,
-    name: "Tony Stark",
-    username: "tony",
-    email: "tony@gmail.com",
-    status: "Active",
-    createdAt: new Date().toLocaleString(),
-  },
 ];
 
 const Users = () => {
