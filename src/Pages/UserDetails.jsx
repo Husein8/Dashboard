@@ -1,4 +1,3 @@
-// UserDetails.jsx
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
@@ -15,6 +14,10 @@ const UserDetails = () => {
 
   const handleUpdateCoinClick = () => {
     navigate(`/update-coin/${id}`);
+  };
+
+  const handleViewAllPostsClick = () => {
+    navigate(`/view-all-posts/${id}`);
   };
 
   const handleDeleteClick = () => {
@@ -45,9 +48,15 @@ const UserDetails = () => {
         </button>
         <button
           onClick={handleUpdateCoinClick}
-          className="bg-buttonsColor text-white px-4 py-2 rounded"
+          className="bg-buttonsColor text-white px-4 py-2 mr-2 rounded"
         >
           Update Coin
+        </button>
+        <button
+          onClick={handleViewAllPostsClick}
+          className="bg-buttonsColor text-white px-4 py-2 rounded"
+        >
+          View All Post
         </button>
       </div>
       <div className="overflow-x-auto">
@@ -70,7 +79,7 @@ const UserDetails = () => {
               <td className="py-2 px-4 border">{user.status}</td>
             </tr>
             <tr>
-              <th className="py-2 px-4 border">Is Verified?</th>
+              <th className="py-2 px-4 border">Is Verified</th>
               <td className="py-2 px-4 border">
                 {user.isVerified ? "Yes" : "No"}
               </td>
@@ -88,72 +97,51 @@ const UserDetails = () => {
               <td className="py-2 px-4 border">{user.city}</td>
             </tr>
             <tr>
-              <th className="py-2 px-4 border">Is Phone Verified?</th>
-              <td className="py-2 px-4 border">
-                {user.isPhoneVerified ? "Yes" : "No"}
-              </td>
-            </tr>
-            <tr>
-              <th className="py-2 px-4 border">Is Email Verified?</th>
-              <td className="py-2 px-4 border">
-                {user.isEmailVerified ? "Yes" : "No"}
-              </td>
+              <th className="py-2 px-4 border">Phone Number</th>
+              <td className="py-2 px-4 border">{user.phoneNumber}</td>
             </tr>
             <tr>
               <th className="py-2 px-4 border">Bio</th>
-              <td className="py-2 px-4 border">
-                {user.bio ? user.bio : "not set"}
-              </td>
+              <td className="py-2 px-4 border">{user.bio}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Available Coin</th>
+              <td className="py-2 px-4 border">{user.availableCoin}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Last Active</th>
+              <td className="py-2 px-4 border">{user.lastActive}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Created Date</th>
+              <td className="py-2 px-4 border">{user.createdDate}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Image</th>
+              <td className="py-2 px-4 border">{user.image}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Login Mode</th>
+              <td className="py-2 px-4 border">{user.loginMode}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Device Type</th>
+              <td className="py-2 px-4 border">{user.deviceType}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Device Model</th>
+              <td className="py-2 px-4 border">{user.deviceModel}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Logged At</th>
+              <td className="py-2 px-4 border">{user.loggedAt}</td>
+            </tr>
+            <tr>
+              <th className="py-2 px-4 border">Login IP</th>
+              <td className="py-2 px-4 border">{user.loginIp}</td>
             </tr>
           </tbody>
         </table>
-        <div className=" bg-white">
-          <h2 className="mt-5 mb-3 pl-2 pt-2 text-xl font-normal ">
-            User login detail:
-          </h2>
-          <table className="min-w-full bg-white border border-gray-200">
-            <tbody>
-              <tr>
-                <th className="py-2 px-4 border">Available Coin</th>
-                <td className="py-2 px-4 border">{user.availableCoin}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Last Active</th>
-                <td className="py-2 px-4 border">{user.lastActive}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Created date</th>
-                <td className="py-2 px-4 border">{user.createdDate}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Image</th>
-                <td className="py-2 px-4 border">
-                  {user.image ? user.image : "not set"}
-                </td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Login Mode</th>
-                <td className="py-2 px-4 border">{user.loginMode}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Device Type</th>
-                <td className="py-2 px-4 border">{user.deviceType}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Device Model</th>
-                <td className="py-2 px-4 border">{user.deviceModel}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Logged At</th>
-                <td className="py-2 px-4 border">{user.loggedAt}</td>
-              </tr>
-              <tr>
-                <th className="py-2 px-4 border">Login IP</th>
-                <td className="py-2 px-4 border">{user.loginIp}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   );

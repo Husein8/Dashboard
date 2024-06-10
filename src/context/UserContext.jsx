@@ -24,6 +24,18 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
+    posts: [
+      {
+        id: 1,
+        title: "sample post",
+        totalViews: 19,
+        totalLikes: 2,
+        popularPoints: 23,
+        totalComments: 3,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+    ],
   },
   2: {
     name: "Bob Johnson",
@@ -45,6 +57,18 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
+    posts: [
+      {
+        id: 2,
+        title: "sample post",
+        totalViews: 19,
+        totalLikes: 2,
+        popularPoints: 23,
+        totalComments: 3,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+    ],
   },
   3: {
     name: "Charlie Brown",
@@ -66,6 +90,18 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
+    posts: [
+      {
+        id: 3,
+        title: "sample post",
+        totalViews: 19,
+        totalLikes: 2,
+        popularPoints: 23,
+        totalComments: 3,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+    ],
   },
   4: {
     name: "Diana Prince",
