@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 const UserDetails = () => {
@@ -54,10 +54,15 @@ const UserDetails = () => {
         </button>
         <button
           onClick={handleViewAllPostsClick}
-          className="bg-buttonsColor text-white px-4 py-2 rounded"
+          className="bg-buttonsColor text-white px-4 py-2 rounded mr-2"
         >
           View All Post
         </button>
+        <Link to={`/usersFollowing/${id}`}>
+          <button className="bg-buttonsColor text-white px-4 py-2 rounded">
+            View Following ({user.userFollowers.length})
+          </button>
+        </Link>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200">

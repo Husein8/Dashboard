@@ -45,7 +45,7 @@ const ViewAllPosts = () => {
           placeholder="Search Title"
           value={searchTitle}
           onChange={handleSearchChange}
-          className="border p-2 mr-3"
+          className="border p-2 mr-3 mb-2"
         />
         <select
           value={selectedUserId}
@@ -60,12 +60,12 @@ const ViewAllPosts = () => {
         </select>
       </div>
       <div
-        className="text-blue-500 cursor-pointer mb-3"
+        className="text-buttonsColor inline cursor-pointer text-xl"
         onClick={() => navigate(`/userdetails/${selectedUserId}`)}
       >
         {user.username}
       </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-3">
         <table className="min-w-full bg-white border border-gray-200">
           <thead>
             <tr>
@@ -107,7 +107,7 @@ const ViewAllPosts = () => {
             ) : (
               <tr>
                 <td className="py-2 px-4 border" colSpan="9">
-                  No posts available
+                  No posts available for {user.username}
                 </td>
               </tr>
             )}
