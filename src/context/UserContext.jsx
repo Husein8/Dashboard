@@ -1,4 +1,3 @@
-// UserContext.js
 import React, { createContext, useState } from "react";
 
 const UserContext = createContext();
@@ -36,7 +35,8 @@ const userDetailsData = {
         createdAt: "09/06/2024 9:44 AM",
       },
     ],
-    userFollowers: ["bob", "charlie"],
+    viewFollowing: ["bob", "charlie"],
+    viewFollowers: ["diana", "eve"],
   },
   2: {
     name: "Bob Johnson",
@@ -70,7 +70,8 @@ const userDetailsData = {
         createdAt: "09/06/2024 9:44 AM",
       },
     ],
-    userFollowers: [],
+    viewFollowing: [],
+    viewFollowers: ["alice"],
   },
   3: {
     name: "Charlie Brown",
@@ -104,7 +105,8 @@ const userDetailsData = {
         createdAt: "09/06/2024 9:44 AM",
       },
     ],
-    userFollowers: ["alice"],
+    viewFollowing: ["alice"],
+    viewFollowers: ["diana"],
   },
   4: {
     name: "Diana Prince",
@@ -126,7 +128,8 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
-    userFollowers: [],
+    viewFollowing: [],
+    viewFollowers: ["alice"],
   },
   5: {
     name: "Eve Adams",
@@ -148,7 +151,8 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
-    userFollowers: [],
+    viewFollowing: [],
+    viewFollowers: ["alice", "bob"],
   },
 };
 

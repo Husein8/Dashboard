@@ -14,6 +14,7 @@ import { UserProvider } from "./context/UserContext";
 import UpdateUserInfo from "./Pages/UpdateUserInfo";
 import ViewAllPosts from "./Pages/ViewAllPosts";
 import UsersFollowing from "./Pages/UsersFollowing";
+import ViewFollowers from "./Pages/ViewFollowers";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -38,6 +39,7 @@ const App = () => {
               <Route path="/update-coin/:id" element={<UpdateCoinUser />} />
               <Route path="/view-all-posts/:id" element={<ViewAllPosts />} />
               <Route path="/usersFollowing/:id" element={<UsersFollowing />} />
+              <Route path="/viewFollowers/:id" element={<ViewFollowers />} />
             </Route>
           </Routes>
         </Router>

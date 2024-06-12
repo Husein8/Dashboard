@@ -48,19 +48,25 @@ const UserDetails = () => {
         </button>
         <button
           onClick={handleUpdateCoinClick}
-          className="bg-buttonsColor text-white px-4 py-2 mr-2 rounded"
+          className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded"
         >
           Update Coin
         </button>
         <button
           onClick={handleViewAllPostsClick}
-          className="bg-buttonsColor text-white px-4 py-2 rounded mr-2"
+          className="bg-buttonsColor my-1 text-white px-4 py-2 rounded mr-2"
         >
           View All Post
         </button>
         <Link to={`/usersFollowing/${id}`}>
-          <button className="bg-buttonsColor text-white px-4 py-2 rounded">
-            View Following ({user.userFollowers.length})
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded">
+            View following ({user.viewFollowing.length})
+          </button>
+        </Link>
+
+        <Link to={`/viewFollowers/${id}`}>
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
+            View followers ({user.viewFollowers.length})
           </button>
         </Link>
       </div>
