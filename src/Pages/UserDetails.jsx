@@ -65,8 +65,14 @@ const UserDetails = () => {
         </Link>
 
         <Link to={`/viewFollowers/${id}`}>
-          <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded">
             View followers ({user.viewFollowers.length})
+          </button>
+        </Link>
+
+        <Link to={`/blockedUsers/${id}`}>
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
+            Blocked users ({user.blockedUsers.length})
           </button>
         </Link>
       </div>

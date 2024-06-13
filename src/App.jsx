@@ -15,6 +15,8 @@ import UpdateUserInfo from "./Pages/UpdateUserInfo";
 import ViewAllPosts from "./Pages/ViewAllPosts";
 import UsersFollowing from "./Pages/UsersFollowing";
 import ViewFollowers from "./Pages/ViewFollowers";
+import BlockedUsers from "./Pages/BlockedUsers";
+import ViewBlockedUsers from "./Pages/BlockedUsers";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -40,6 +42,7 @@ const App = () => {
               <Route path="/view-all-posts/:id" element={<ViewAllPosts />} />
               <Route path="/usersFollowing/:id" element={<UsersFollowing />} />
               <Route path="/viewFollowers/:id" element={<ViewFollowers />} />
+              <Route path="/blockedUsers/:id" element={<ViewBlockedUsers />} />
             </Route>
           </Routes>
         </Router>

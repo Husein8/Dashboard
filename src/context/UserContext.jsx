@@ -37,6 +37,7 @@ const userDetailsData = {
     ],
     viewFollowing: ["bob", "charlie"],
     viewFollowers: ["diana", "eve"],
+    blockedUsers: ["charlie"],
   },
   2: {
     name: "Bob Johnson",
@@ -72,6 +73,7 @@ const userDetailsData = {
     ],
     viewFollowing: [],
     viewFollowers: ["alice"],
+    blockedUsers: ["charlie"],
   },
   3: {
     name: "Charlie Brown",
@@ -107,6 +109,7 @@ const userDetailsData = {
     ],
     viewFollowing: ["alice"],
     viewFollowers: ["diana"],
+    blockedUsers: ["alice"],
   },
   4: {
     name: "Diana Prince",
@@ -130,6 +133,7 @@ const userDetailsData = {
     loginIp: "64.44.177.36",
     viewFollowing: [],
     viewFollowers: ["alice"],
+    blockedUsers: ["charlie"],
   },
   5: {
     name: "Eve Adams",
@@ -153,6 +157,7 @@ const userDetailsData = {
     loginIp: "64.44.177.36",
     viewFollowing: [],
     viewFollowers: ["alice", "bob"],
+    blockedUsers: ["charlie"],
   },
 };
 
