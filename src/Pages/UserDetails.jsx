@@ -78,8 +78,7 @@ const UserDetails = () => {
 
         <Link to={`/viewStories/${id}`}>
           <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
-            View stories
-            {/* ({user.viewStories.length}) */}
+            View stories ({user.stories.length})
           </button>
         </Link>
       </div>
