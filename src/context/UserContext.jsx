@@ -38,6 +38,17 @@ const userDetailsData = {
     viewFollowing: ["bob", "charlie"],
     viewFollowers: ["diana", "eve"],
     blockedUsers: ["charlie"],
+    stories: [
+      {
+        id: 1,
+        type: "Image",
+        description: "Alice's first story",
+        backgroundColor: "#FFFFFF",
+        thumbnail: "path/to/thumbnail1.png",
+        video: "path/to/video1.mp4",
+        status: "Expired",
+      },
+    ],
   },
   2: {
     name: "Bob Johnson",
@@ -74,6 +85,17 @@ const userDetailsData = {
     viewFollowing: [],
     viewFollowers: ["alice"],
     blockedUsers: ["charlie"],
+    stories: [
+      {
+        id: 2,
+        type: "Image",
+        description: "Bob's first story",
+        backgroundColor: "#FFFFFF",
+        thumbnail: "path/to/thumbnail1.png",
+        video: "path/to/video1.mp4",
+        status: "Active",
+      },
+    ], // Ensure all users have a stories array
   },
   3: {
     name: "Charlie Brown",
@@ -110,6 +132,7 @@ const userDetailsData = {
     viewFollowing: ["alice"],
     viewFollowers: ["diana"],
     blockedUsers: ["alice"],
+    stories: [], // Ensure all users have a stories array
   },
   4: {
     name: "Diana Prince",
@@ -134,6 +157,7 @@ const userDetailsData = {
     viewFollowing: [],
     viewFollowers: ["alice"],
     blockedUsers: ["charlie"],
+    stories: [], // Ensure all users have a stories array
   },
   5: {
     name: "Eve Adams",
@@ -158,6 +182,17 @@ const userDetailsData = {
     viewFollowing: [],
     viewFollowers: ["alice", "bob"],
     blockedUsers: ["charlie"],
+    stories: [
+      {
+        id: 5,
+        type: "Image",
+        description: "Eve's first story",
+        backgroundColor: "",
+        thumbnail: "path/to/thumbnail1.png",
+        video: "path/to/video1.mp4",
+        status: "Active",
+      },
+    ], // Ensure all users have a stories array
   },
 };
 

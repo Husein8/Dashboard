@@ -17,6 +17,7 @@ import UsersFollowing from "./Pages/UsersFollowing";
 import ViewFollowers from "./Pages/ViewFollowers";
 import BlockedUsers from "./Pages/BlockedUsers";
 import ViewBlockedUsers from "./Pages/BlockedUsers";
+import ViewStories from "./Pages/ViewStories";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -43,6 +44,7 @@ const App = () => {
               <Route path="/usersFollowing/:id" element={<UsersFollowing />} />
               <Route path="/viewFollowers/:id" element={<ViewFollowers />} />
               <Route path="/blockedUsers/:id" element={<ViewBlockedUsers />} />
+              <Route path="/viewStories/:id" element={<ViewStories />} />
             </Route>
           </Routes>
         </Router>
