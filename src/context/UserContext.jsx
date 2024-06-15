@@ -49,6 +49,15 @@ const userDetailsData = {
         status: "Expired",
       },
     ],
+    userLive: [
+      {
+        id: 1,
+        startTime: "10:00 AM",
+        endTime: "11:00 AM",
+        totalTime: "1 hour",
+        action: "",
+      },
+    ],
   },
   2: {
     name: "Bob Johnson",
@@ -95,7 +104,16 @@ const userDetailsData = {
         video: "path/to/video1.mp4",
         status: "Active",
       },
-    ], // Ensure all users have a stories array
+    ],
+    userLive: [
+      {
+        id: 2,
+        startTime: "09:00 AM",
+        endTime: "10:30 AM",
+        totalTime: "1.5 hours",
+        action: "",
+      },
+    ],
   },
   3: {
     name: "Charlie Brown",
@@ -132,7 +150,16 @@ const userDetailsData = {
     viewFollowing: ["alice"],
     viewFollowers: ["diana"],
     blockedUsers: ["alice"],
-    stories: [], // Ensure all users have a stories array
+    stories: [],
+    userLive: [
+      {
+        id: 3,
+        startTime: "10:00 AM",
+        endTime: "11:00 AM",
+        totalTime: "1 hour",
+        action: "",
+      },
+    ],
   },
   4: {
     name: "Diana Prince",
@@ -157,7 +184,16 @@ const userDetailsData = {
     viewFollowing: [],
     viewFollowers: ["alice"],
     blockedUsers: ["charlie"],
-    stories: [], // Ensure all users have a stories array
+    stories: [],
+    userLive: [
+      {
+        id: 4,
+        startTime: "17:00 PM",
+        endTime: "18:00 PM",
+        totalTime: "1 hour",
+        action: "",
+      },
+    ],
   },
   5: {
     name: "Eve Adams",
@@ -192,7 +228,8 @@ const userDetailsData = {
         video: "path/to/video1.mp4",
         status: "Active",
       },
-    ], // Ensure all users have a stories array
+    ],
+    userLive: [], // Ensure empty userLive for user 5
   },
 };
 

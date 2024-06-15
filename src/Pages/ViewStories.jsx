@@ -57,7 +57,6 @@ const ViewStories = () => {
             value={selectedUser}
             className="border rounded p-2 bg-buttonColor"
           >
-            <option value="">All</option>
             {Object.entries(users).map(([userId, user]) => (
               <option key={userId} value={userId}>
                 {user.username}
