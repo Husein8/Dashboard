@@ -19,6 +19,8 @@ import BlockedUsers from "./Pages/BlockedUsers";
 import ViewBlockedUsers from "./Pages/BlockedUsers";
 import ViewStories from "./Pages/ViewStories";
 import UserLive from "./Pages/UserLive";
+import UserReels from "./Pages/UserReels";
+import ManageUserAppFeature from "./Pages/ManageUserAppFeature";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -47,6 +49,11 @@ const App = () => {
               <Route path="/blockedUsers/:id" element={<ViewBlockedUsers />} />
               <Route path="/viewStories/:id" element={<ViewStories />} />
               <Route path="/userLive/:id" element={<UserLive />} />
+              <Route path="/userReels/:id" element={<UserReels />} />
+              <Route
+                path="/usersFeatures/:id"
+                element={<ManageUserAppFeature />}
+              />
             </Route>
           </Routes>
         </Router>

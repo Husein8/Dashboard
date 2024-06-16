@@ -83,8 +83,20 @@ const UserDetails = () => {
         </Link>
 
         <Link to={`/userLive/${id}`}>
-          <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded">
             User Live
+          </button>
+        </Link>
+
+        <Link to={`/userReels/${id}`}>
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded">
+            User Reels
+          </button>
+        </Link>
+
+        <Link to={`/usersFeatures/${id}`}>
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
+            Manage User App Feature
           </button>
         </Link>
       </div>

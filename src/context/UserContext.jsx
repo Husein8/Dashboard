@@ -58,6 +58,29 @@ const userDetailsData = {
         action: "",
       },
     ],
+    userReels: [
+      {
+        id: 1,
+        title: "Sample Reel 1",
+        totalViews: 100,
+        totalLikes: 50,
+        totalComments: 10,
+        totalShares: 5,
+        status: "Active",
+        action: "View",
+      },
+      {
+        id: 2,
+        title: "Sample Reel 1",
+        totalViews: 100,
+        totalLikes: 50,
+        totalComments: 10,
+        totalShares: 5,
+        status: "Active",
+        action: "View",
+      },
+      // Add more reels as needed
+    ],
   },
   2: {
     name: "Bob Johnson",
@@ -114,6 +137,29 @@ const userDetailsData = {
         action: "",
       },
     ],
+    userReels: [
+      {
+        id: 1,
+        title: "Sample Reel 1",
+        totalViews: 100,
+        totalLikes: 50,
+        totalComments: 10,
+        totalShares: 5,
+        status: "Active",
+        action: "View",
+      },
+      {
+        id: 2,
+        title: "Sample Reel 2",
+        totalViews: 100,
+        totalLikes: 50,
+        totalComments: 10,
+        totalShares: 5,
+        status: "Active",
+        action: "View",
+      },
+      // Add more reels as needed
+    ],
   },
   3: {
     name: "Charlie Brown",
@@ -160,6 +206,20 @@ const userDetailsData = {
         action: "",
       },
     ],
+    userReels: [
+      {
+        id: 1,
+        title: "Sample Reel 1",
+        totalViews: 100,
+        totalLikes: 50,
+        totalComments: 10,
+        totalShares: 5,
+        status: "Active",
+        action: "View",
+      },
+
+      // Add more reels as needed
+    ],
   },
   4: {
     name: "Diana Prince",
@@ -194,6 +254,7 @@ const userDetailsData = {
         action: "",
       },
     ],
+    userReels: [],
   },
   5: {
     name: "Eve Adams",
@@ -229,7 +290,19 @@ const userDetailsData = {
         status: "Active",
       },
     ],
-    userLive: [], // Ensure empty userLive for user 5
+    userLive: [],
+    userReels: [
+      {
+        id: 1,
+        title: " Reel 1",
+        totalViews: 300,
+        totalLikes: 20,
+        totalComments: 20,
+        totalShares: 12,
+        status: "Active",
+        action: "View",
+      },
+    ],
   },
 };
 
