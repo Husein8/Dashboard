@@ -96,34 +96,34 @@ const ViewStories = () => {
             </thead>
             <tbody>
               {stories.map((story) => (
-                <tr key={story.id}>
-                  <td className="py-2 px-4 border">
+                <tr key={story.id} className="">
+                  <td className="py-5 px-8 border">
                     <Link
                       to={`/userDetails/${story.id}`}
-                      className="text-buttonsColor hover:underline"
+                      className="text-buttonsColor"
                     >
                       {story.username}
                     </Link>
                   </td>
-                  <td className="py-2 px-4 border">{story.type}</td>
-                  <td className="py-2 px-4 border">{story.description}</td>
-                  <td className="py-2 px-4 border">{story.backgroundColor}</td>
-                  <td className="py-2 px-4 border">
+                  <td className="py-5 px-8 border">{story.type}</td>
+                  <td className="py-5 px-8 border">{story.description}</td>
+                  <td className="py-5 px-8 border">{story.backgroundColor}</td>
+                  <td className="py-5 px-8 border">
                     <img src={story.thumbnail} alt="thumbnail" width="50" />
                   </td>
-                  <td className="py-2 px-4 border">
+                  <td className="py-5 px-8 border">
                     <video width="50" controls>
                       <source src={story.video} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </td>
-                  <td className="py-2 px-4 border">{story.status}</td>
+                  <td className="py-5 px-8 border">{story.status}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         ) : (
-          <p className="text-center text-gray-500 mt-4">No results found</p>
+          <p className="text-center text-gray-500 my-4">No results found</p>
         )}
       </div>
     </div>
