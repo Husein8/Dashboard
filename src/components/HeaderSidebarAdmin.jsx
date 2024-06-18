@@ -26,7 +26,7 @@ function HeaderSidebarAdmin({ toggleSidebar, login }) {
 
   return (
     <div>
-      <div className="flex items-center justify-between pl-2 py-2 bg-white">
+      <div className="flex items-center justify-between pl-2 py-2  bg-white">
         <div className="">
           <button onClick={toggleSidebar} className="text-xl pt-2">
             <FaBars />

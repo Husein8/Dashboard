@@ -77,32 +77,34 @@ const ManageUserAppFeature = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 bg-white">
-      <h2 className="text-xl mb-6 font-medium">
-        Manage Features for {user.name}
-      </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
-        {featureList.map((feature) => (
-          <div key={feature} className="flex items-center">
-            <input
-              type="checkbox"
-              id={feature}
-              checked={features[feature] || false}
-              onChange={() => handleFeatureChange(feature)}
-              className="mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-            <label htmlFor={feature} className="ml-2 text-sm text-black">
-              {feature}
-            </label>
-          </div>
-        ))}
+    <div className="p-3">
+      <div className="container mx-auto p-6 bg-white">
+        <h2 className="text-xl mb-6 font-medium">
+          Manage Features for {user.name}
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+          {featureList.map((feature) => (
+            <div key={feature} className="flex items-center">
+              <input
+                type="checkbox"
+                id={feature}
+                checked={features[feature] || false}
+                onChange={() => handleFeatureChange(feature)}
+                className="mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+              />
+              <label htmlFor={feature} className="ml-2 text-sm text-black">
+                {feature}
+              </label>
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={handleSave}
+          className="bg-buttonsColor text-white px-4 py-2 rounded"
+        >
+          Save
+        </button>
       </div>
-      <button
-        onClick={handleSave}
-        className="bg-buttonsColor text-white px-4 py-2 rounded"
-      >
-        Save
-      </button>
     </div>
   );
 };

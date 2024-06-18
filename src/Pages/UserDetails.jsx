@@ -40,12 +40,7 @@ const UserDetails = () => {
         >
           Update
         </button>
-        <button
-          onClick={handleDeleteClick}
-          className="mr-2 bg-red-500 text-white px-4 py-2 rounded"
-        >
-          Delete
-        </button>
+
         <button
           onClick={handleUpdateCoinClick}
           className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded"
@@ -95,10 +90,17 @@ const UserDetails = () => {
         </Link>
 
         <Link to={`/usersFeatures/${id}`}>
-          <button className="bg-buttonsColor my-1 text-white px-4 py-2 rounded">
+          <button className="bg-buttonsColor my-1 text-white px-4 py-2 mr-2 rounded">
             Manage User App Feature
           </button>
         </Link>
+
+        <button
+          onClick={handleDeleteClick}
+          className="mr-2 bg-red-500 text-white px-4 py-2 rounded"
+        >
+          Delete
+        </button>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200">

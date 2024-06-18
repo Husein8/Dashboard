@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 function Dashboard() {
   return (
-    <div>
+    <div className="p-3">
       <IconsData />
       <Charts />
       <TableUsersData />

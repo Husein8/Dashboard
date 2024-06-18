@@ -27,43 +27,45 @@ const UpdateCoinUser = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-xl mb-3 font-medium">
-        Update Coin for User: {user.name}
-      </h2>
-      <div className="ml-3">
-        <div className="flex items-center gap-20 md:gap-40 mb-4 mt-10">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Username
-          </label>
-          <p className="text-gray-700">{user.username}</p>
+    <div className="p-3">
+      <div className="container mx-auto p-4 rounded-md shadow-md bg-white">
+        <h2 className="text-xl mb-3 font-medium">
+          Update Coin for User: {user.name}
+        </h2>
+        <div className="ml-3">
+          <div className="flex items-center gap-20 md:gap-40 mb-4 mt-10">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Username
+            </label>
+            <p className="text-gray-700">{user.username}</p>
+          </div>
+          <div className="flex items-center gap-20 md:gap-40 mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Email
+            </label>
+            <p className="text-gray-700">{user.email}</p>
+          </div>
+          <div className="flex items-center gap-20 md:gap-40 mb-4">
+            <label className="block text-gray-700 text-sm font-bold ">
+              Current Available Coin
+            </label>
+            <p className="text-gray-700">{user.availableCoin}</p>
+          </div>
+          <div className="mb-4">
+            <input
+              type="number"
+              value={coinChange}
+              onChange={handleCoinChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <button
+            onClick={handleUpdateCoin}
+            className="bg-green-500 text-white px-4 py-2 rounded"
+          >
+            Save
+          </button>
         </div>
-        <div className="flex items-center gap-20 md:gap-40 mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Email
-          </label>
-          <p className="text-gray-700">{user.email}</p>
-        </div>
-        <div className="flex items-center gap-20 md:gap-40 mb-4">
-          <label className="block text-gray-700 text-sm font-bold ">
-            Current Available Coin
-          </label>
-          <p className="text-gray-700">{user.availableCoin}</p>
-        </div>
-        <div className="mb-4">
-          <input
-            type="number"
-            value={coinChange}
-            onChange={handleCoinChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <button
-          onClick={handleUpdateCoin}
-          className="bg-green-500 text-white px-4 py-2 rounded"
-        >
-          Save
-        </button>
       </div>
     </div>
   );
