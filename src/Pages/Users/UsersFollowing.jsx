@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
-const ViewFollowers = () => {
+const UsersFollowing = () => {
   const { id } = useParams();
   const { users } = useContext(UserContext);
   const user = users[id];
-  const followers = user.viewFollowers;
+  const following = user.viewFollowing;
 
   return (
     <div className="p-3">
       <div className="container mx-auto p-4 rounded-md shadow-md bg-white">
         <h1 className="text-2xl font-bold mb-4">
-          Users following {user.username}
+          Users {user.username} is following
         </h1>
         <div className="overflow-x-auto">
-          {followers.length > 0 ? (
+          {following.length > 0 ? (
             <table className="min-w-full">
               <thead>
                 <tr>
@@ -26,8 +26,8 @@ const ViewFollowers = () => {
                 </tr>
               </thead>
               <tbody>
-                {followers.map((username, index) => {
-                  const followerUser = Object.values(users).find(
+                {following.map((username, index) => {
+                  const followedUser = Object.values(users).find(
                     (u) => u.username === username
                   );
                   return (
@@ -38,18 +38,18 @@ const ViewFollowers = () => {
                           className="text-buttonsColor"
                           to={`/userDetails/${Object.keys(users).find(
                             (key) =>
-                              users[key].username === followerUser.username
+                              users[key].username === followedUser.username
                           )}`}
                         >
-                          {followerUser.name}
+                          {followedUser.name}
                         </Link>
                       </td>
-                      <td className="py-2 px-4">{followerUser.username}</td>
+                      <td className="py-2 px-4">{followedUser.username}</td>
                       <td className="py-2 px-4">
                         <Link
                           to={`/userDetails/${Object.keys(users).find(
                             (key) =>
-                              users[key].username === followerUser.username
+                              users[key].username === followedUser.username
                           )}`}
                         >
                           <button className="text-blue-400 hover:text-blue-500">
@@ -73,4 +73,4 @@ const ViewFollowers = () => {
   );
 };
 
-export default ViewFollowers;
+export default UsersFollowing;

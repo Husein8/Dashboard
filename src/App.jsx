@@ -7,20 +7,19 @@ import AdminSettings from "./Pages/AdminSettings";
 import ContactInfo from "./Pages/ContactInfo";
 import { AdminSettingsProvider } from "./context/AdminSettingsContext";
 import MainLayout from "./components/MainLayout";
-import Users from "./Pages/Users";
-import UserDetails from "./Pages/UserDetails";
-import UpdateCoinUser from "./Pages/UpdateCoinUser";
+import Users from "./Pages/Users/Users";
+import UserDetails from "./Pages/Users/UserDetails";
+import UpdateCoinUser from "./Pages/Users/UpdateCoinUser";
 import { UserProvider } from "./context/UserContext";
-import UpdateUserInfo from "./Pages/UpdateUserInfo";
-import ViewAllPosts from "./Pages/ViewAllPosts";
-import UsersFollowing from "./Pages/UsersFollowing";
-import ViewFollowers from "./Pages/ViewFollowers";
-import BlockedUsers from "./Pages/BlockedUsers";
-import ViewBlockedUsers from "./Pages/BlockedUsers";
-import ViewStories from "./Pages/ViewStories";
-import UserLive from "./Pages/UserLive";
-import UserReels from "./Pages/UserReels";
-import ManageUserAppFeature from "./Pages/ManageUserAppFeature";
+import UpdateUserInfo from "./Pages/Users/UpdateUserInfo";
+import ViewAllPosts from "./Pages/Users/ViewAllPosts";
+import UsersFollowing from "./Pages/Users/UsersFollowing";
+import ViewFollowers from "./Pages/Users/ViewFollowers";
+import BlockedUsers from "./Pages/Users/BlockedUsers";
+import ViewStories from "./Pages/Users/ViewStories";
+import UserLive from "./Pages/Users/UserLive";
+import UserReels from "./Pages/Users/UserReels";
+import ManageUserAppFeature from "./Pages/Users/ManageUserAppFeature";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -46,7 +45,7 @@ const App = () => {
               <Route path="/view-all-posts/:id" element={<ViewAllPosts />} />
               <Route path="/usersFollowing/:id" element={<UsersFollowing />} />
               <Route path="/viewFollowers/:id" element={<ViewFollowers />} />
-              <Route path="/blockedUsers/:id" element={<ViewBlockedUsers />} />
+              <Route path="/blockedUsers/:id" element={<BlockedUsers />} />
               <Route path="/viewStories/:id" element={<ViewStories />} />
               <Route path="/userLive/:id" element={<UserLive />} />
               <Route path="/userReels/:id" element={<UserReels />} />
