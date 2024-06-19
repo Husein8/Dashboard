@@ -60,6 +60,7 @@ const sectionsData = [
       {
         text: "Post",
         icon: <FaWpforms />,
+        path: "/posts",
       },
       {
         text: "Repored Post",

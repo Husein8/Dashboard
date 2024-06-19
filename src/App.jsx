@@ -20,6 +20,8 @@ import ViewStories from "./Pages/Users/ViewStories";
 import UserLive from "./Pages/Users/UserLive";
 import UserReels from "./Pages/Users/UserReels";
 import ManageUserAppFeature from "./Pages/Users/ManageUserAppFeature";
+import Posts from "./Pages/Post/Posts";
+import PostDetails from "./Pages/Post/PostDetails";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -52,6 +54,11 @@ const App = () => {
               <Route
                 path="/usersFeatures/:id"
                 element={<ManageUserAppFeature />}
+              />
+              <Route path="/posts" element={<Posts />} />
+              <Route
+                path="/postDetails/:userId/:postIndex"
+                element={<PostDetails />}
               />
             </Route>
           </Routes>

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 const UserContext = createContext();
 
@@ -27,10 +27,30 @@ const userDetailsData = {
       {
         id: 1,
         title: "sample post",
-        totalViews: 19,
+        totalViews: 1,
         totalLikes: 2,
-        popularPoints: 23,
-        totalComments: 3,
+        popularPoints: 3,
+        totalComments: 4,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+      {
+        id: 2,
+        title: "sample post",
+        totalViews: 10,
+        totalLikes: 20,
+        popularPoints: 30,
+        totalComments: 40,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+      {
+        id: 3,
+        title: "sample post",
+        totalViews: 11,
+        totalLikes: 21,
+        popularPoints: 31,
+        totalComments: 41,
         status: "Active",
         createdAt: "09/06/2024 9:44 AM",
       },
@@ -106,10 +126,10 @@ const userDetailsData = {
       {
         id: 2,
         title: "sample post",
-        totalViews: 19,
-        totalLikes: 2,
-        popularPoints: 23,
-        totalComments: 3,
+        totalViews: 10,
+        totalLikes: 11,
+        popularPoints: 12,
+        totalComments: 13,
         status: "Active",
         createdAt: "09/06/2024 9:44 AM",
       },
@@ -241,6 +261,18 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
+    posts: [
+      {
+        id: 1,
+        title: "sample post",
+        totalViews: 1,
+        totalLikes: 2,
+        popularPoints: 3,
+        totalComments: 4,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+    ],
     viewFollowing: [],
     viewFollowers: ["alice"],
     blockedUsers: ["charlie"],
@@ -276,6 +308,38 @@ const userDetailsData = {
     deviceModel: "Rosemary’s iPhone",
     loggedAt: "04/06/2024 10:35 AM",
     loginIp: "64.44.177.36",
+    posts: [
+      {
+        id: 1,
+        title: "sample post",
+        totalViews: 1,
+        totalLikes: 2,
+        popularPoints: 3,
+        totalComments: 4,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+      {
+        id: 2,
+        title: "sample post",
+        totalViews: 1,
+        totalLikes: 2,
+        popularPoints: 3,
+        totalComments: 4,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+      {
+        id: 3,
+        title: "sample post",
+        totalViews: 100,
+        totalLikes: 200,
+        popularPoints: 300,
+        totalComments: 400,
+        status: "Active",
+        createdAt: "09/06/2024 9:44 AM",
+      },
+    ],
     viewFollowing: [],
     viewFollowers: ["alice", "bob"],
     blockedUsers: ["charlie"],
@@ -316,4 +380,13 @@ const UserProvider = ({ children }) => {
   );
 };
 
-export { UserContext, UserProvider };
+// Custom hook to use the UserContext
+const useUserContext = () => {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error("useUserContext must be used within a UserProvider");
+  }
+  return context;
+};
+
+export { UserContext, UserProvider, useUserContext };
