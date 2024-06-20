@@ -39,9 +39,16 @@ const Posts = () => {
   const posts =
     selectedUser === ""
       ? getFilteredPosts()
-      : users[selectedUser]?.posts.filter((post) =>
-          post.title.toLowerCase().includes(searchTerm.toLowerCase())
-        ) || [];
+      : users[selectedUser]?.posts
+          .map((post, index) => ({
+            ...post,
+            userId: selectedUser,
+            username: users[selectedUser].username,
+            postIndex: index,
+          }))
+          .filter((post) =>
+            post.title.toLowerCase().includes(searchTerm.toLowerCase())
+          ) || [];
 
   return (
     <div className="p-3">
@@ -106,9 +113,7 @@ const Posts = () => {
                         to={`/userDetails/${post.userId}`}
                         className="text-buttonsColor"
                       >
-                        {selectedUser === ""
-                          ? post.username
-                          : users[selectedUser].username}
+                        {post.username}
                       </Link>
                     </td>
                     <td className="py-2 px-4 border">{post.totalViews}</td>

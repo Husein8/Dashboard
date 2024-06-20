@@ -27,6 +27,7 @@ const userDetailsData = {
       {
         id: 1,
         title: "sample post",
+        image: "/path/to/image1.png",
         totalViews: 1,
         totalLikes: 2,
         popularPoints: 3,
@@ -161,6 +162,7 @@ const userDetailsData = {
       {
         id: 1,
         title: "Sample Reel 1",
+        image: "/path/to/image1.png",
         totalViews: 100,
         totalLikes: 50,
         totalComments: 10,
@@ -171,6 +173,7 @@ const userDetailsData = {
       {
         id: 2,
         title: "Sample Reel 2",
+        image: "/path/to/image1.png",
         totalViews: 100,
         totalLikes: 50,
         totalComments: 10,
