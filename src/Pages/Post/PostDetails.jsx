@@ -1,80 +1,76 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 
 const PostDetails = () => {
   const { userId, postIndex } = useParams();
   const { users } = useUserContext();
   const post = users[userId]?.posts[postIndex];
+  const navigate = useNavigate();
 
   if (!post) {
     return <p className="text-center text-gray-500 my-4">Post not found</p>;
   }
 
+  const handleUserClick = (userId) => {
+    navigate(`/userDetails/${userId}`);
+  };
+
   return (
-    <div className="p-3 ">
+    <div className="p-3">
       <div className="rounded-md shadow-md bg-white p-4">
-        <Link>
-          <button className="bg-red-600 p-2 rounded-md text-white mb-2">
-            Block Post
-          </button>
-        </Link>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="col-span-1">
-            <table className="table-auto">
+        <h2 className="text-2xl mb-4">Post Detail</h2>
+        <button className="bg-red-600 px-2 py-1 rounded-md text-white mb-4">
+          {/* add some functionality later */}
+          Block Post
+        </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <table className="table-auto w-full mb-4">
               <tbody>
-                <tr>
-                  <td>
-                    <strong>Title:</strong>
-                  </td>
-                  <td>{post.title}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Title:</td>
+                  <td className="py-2">{post.title}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Username:</strong>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Username:</td>
+                  <td className="py-2">
+                    <button
+                      className="text-buttonsColor"
+                      onClick={() => handleUserClick(userId)}
+                    >
+                      {users[userId].username}
+                    </button>
                   </td>
-                  <td>{users[userId].username}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Total Views:</strong>
-                  </td>
-                  <td>{post.totalViews}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Total Views:</td>
+                  <td className="py-2">{post.totalViews}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Total Likes:</strong>
-                  </td>
-                  <td>{post.totalLikes}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Total Likes:</td>
+                  <td className="py-2">{post.totalLikes}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Popular Points:</strong>
-                  </td>
-                  <td>{post.popularPoints}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Popular Points:</td>
+                  <td className="py-2">{post.popularPoints}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Total Comments:</strong>
-                  </td>
-                  <td>{post.totalComments}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Total Comments:</td>
+                  <td className="py-2">{post.totalComments}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Status:</strong>
-                  </td>
-                  <td>{post.status}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Status:</td>
+                  <td className="py-2">{post.status}</td>
                 </tr>
-                <tr>
-                  <td>
-                    <strong>Created At:</strong>
-                  </td>
-                  <td>{post.createdAt}</td>
+                <tr className="border-b mb-2">
+                  <td className="pr-4 py-2">Created At:</td>
+                  <td className="py-2">{post.createdAt}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div className="col-span-1">
+          <div>
             {post.image && (
               <img
                 src={post.image}
@@ -87,24 +83,27 @@ const PostDetails = () => {
             </div>
           </div>
         </div>
-        <div>
-          <h2 className="text-lg mt-6 mb-3">Comments</h2>
-          <div>
-            <table className="table-auto">
+        <div className="mt-6">
+          <h2 className="text-lg mb-3">Comments</h2>
+          <div className="overflow-x-auto">
+            <table className="table-auto w-full">
+              <thead>
+                <tr>
+                  <th className="text-left p-2">#</th>
+                  <th className="text-left p-2">User</th>
+                  <th className="text-left p-2">Created At</th>
+                  <th className="text-left p-2">Comment</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <strong>Title:</strong>
-                  </td>
-                  <td>{post.title}</td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <strong>Total Views:</strong>
-                  </td>
-                  <td>{post.totalViews}</td>
-                </tr>
+                {post.comments.map((comment, index) => (
+                  <tr key={index} className="border-b mb-2">
+                    <td className="p-2">{index + 1}</td>
+                    <td className="p-2">{comment.user}</td>
+                    <td className="p-2">{comment.createdAt}</td>
+                    <td className="p-2">{comment.comment}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
